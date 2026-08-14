@@ -158,7 +158,7 @@ fits with its caption); Figure 2 gained the "other" bar and lost its masking not
 missing-data decomposition line; Figure 4 no longer draws a box over the five no-preparation observations,
 plotting them as raw points with a median tick instead, per the review's minor point.
 
-## Open items after Phase 5
+## Open items after Phase 5, round 1
 
 Items 1–3 of the Phase-4 list are closed: the IRB body is named (OPPHI, Medical Sciences Campus), the
 corresponding-author email is `jean.velez5@upr.edu`, and funding, competing interests, and data
@@ -178,3 +178,48 @@ availability are settled. What remains:
    see the word-budget note above.
 5. **No a priori power calculation exists.** The N=100 target came from the protocol. STROBE item 10 states
    this plainly rather than retrofitting a justification; a reviewer may raise it.
+
+## v3 → v4_draft.tex (Phase 5, round 2 peer review)
+
+Every finding in [`manuscript/PEER_REVIEW_R2.md`](../PEER_REVIEW_R2.md) was applied. Unlike round 1, none of
+round 2's findings required a new author policy decision — each had one clearly lower-risk fix. Full
+verification method: a background agent independently recomputed nearly every number in both `.tex` files
+directly from the raw data (two small discrepancies found, both fixed); a second background agent's
+reference re-check was itself independently re-verified and extended by direct calls to the CrossRef REST
+API for all 28 DOI-bearing entries, which surfaced more errors than the agent's own pass caught.
+
+### Findings applied
+
+| # | What changed |
+|---|---|
+| R2-1 | Word budget was still ~295–400 words over the JPD's verbatim 4,000-word cap — item 4 of round 1's open-items list, never actually done. Trimmed by referencing Tables 1–3/Figures 1–4 instead of repeating their exact counts in prose (Methods §2.2–2.4, Results §3.1–3.3, §3.5), tightening non-caveat clauses in Methods §2.1/2.6 and Discussion §4.1/4.2, and substantially compressing the Conclusion, which had come to restate the Abstract almost in full. No caveat, hedge, or disclosure sentence from round 1 was cut — only redundant restatement of numbers already in a table, a figure caption, or the abstract. Measured **3,947 words** (citations excluded, the convention used throughout this project), down from 4,295; by section, Introduction 419, Methods 1,173, Results 1,166, Discussion 1,189 |
+| 3a | 8 of 31 references had author-name errors (21 individual fields), found by re-verifying every author array directly against CrossRef rather than trusting title/DOI/journal matching alone. Two entries were missing a real co-author outright: `ruffell2021ceremonial` (Antonio Inserra, added between Davies and Butler) and `nayak2023naturalistic` (Heather Jackson, added before Garcia-Romeu — distinct from Hillary Jackson, the 2nd author). The other 6: `carvalho2025scoping` (Louise→Laura Carvalho), `siegel2023psychedelic` (Jacob→Joshua Siegel, Julia→James Daily), `gorman2021psychedelic` (Kellianne→Ksenia Cassidy), `pilecki2021ethical` (Jason→Joseph Rhea), `dutton2025harm` (Charlotte→Carissa Dutton, Jamie→Jessica Oliva), `teixeira2026ayahuasca` (Hugo→Helena Amaro, Louise→Laura Carvalho, Mauricio→Maja Kohek). All corrected in `references.bib` and confirmed rendering correctly in the recompiled bibliography |
+| 3a-ii | `teixeira2026ayahuasca` was defined in `references.bib` but never actually cited in either `.tex` file — the intent recorded in `sources/search_20260813_comparator_demographics_R8.md` to keep it "for design analogy" was never carried through. Cited in the Introduction alongside `carvalho2025scoping` |
+| R2-2 | Methods §2.5 claimed the four BH-correction test families "share neither exposures nor outcome domains." False: `non_con_contact` recurs as an outcome across 3 of 4 families (7 tests total) and `screening_quest` recurs as predictor/outcome across 3 of 4 (6 tests total). Corrected in `v4_draft.tex` §2.5 **and**, caught only during the PDF visual-formatting pass, in `supplement.tex` §S3's own preamble, which repeated the identical incorrect sentence. No q-value is affected — every family already has all q's above 0.05 |
+| R2-3 | Two prose numbers didn't match their own tables, both caught by independent recomputation: §3.4's claim of "median 3 in every subgroup" for comfort/safety by facilitator-background knowledge is wrong for the 2-person "no" subgroup (actually median 2.0) — now scoped to "both facilitator-background subgroups large enough to characterize." Supplement §S3's legal-worry median for the disclosure="si" group was stated as 2, actually 1.5 — corrected in place |
+| R2-4 | The trust-by-facilitator-background test (the only nominally-significant result in the bivariate family) didn't get the tie-aware permutation robustness check the paper already applies to the primary comparison. Computed directly (10,000 permutations, seed 20260715): $p=0.010$, slightly *below* the asymptotic $p=0.017$, so the addition reinforces rather than undercuts the result. Also corrected: the "no"-background group has only 3 non-missing trust values, not 4 as Table 3's category count would suggest (one of the 4 has a missing trust score) |
+| R2-5 | Data availability called the future deposit "de-identified survey data" while Methods says no identifiers were ever collected (anonymous by design, not de-identified after the fact). Changed to "anonymous survey data" |
+| 3a-iii | Online-First pagination recheck: all 5 flagged entries (`carvalho2025scoping`, `pagni2025longterm`, `robinson2026field`, `teixeira2026ayahuasca`, `velezrodriguez2026psilocybin`) confirmed still unpaginated as of 2026-08-14, one day after round 1's check. No `.bib` change |
+
+### Verification
+
+Both `.tex` files compile clean: `pdflatex` (×3) + `bibtex`, zero errors, only the expected 5 "no number and
+no volume" BibTeX warnings for the Online-First entries (previously 4 — `teixeira2026ayahuasca` now appears
+because it's cited, confirming 3a-ii is fixed) and pre-existing cosmetic underfull-hbox warnings in table
+cells unrelated to this revision. `v4_draft.pdf` is 29 pages (was 30), `supplement.pdf` is 9 pages (unchanged).
+Every page of both PDFs was rendered to an image and visually inspected for overlap, truncation, or
+misplacement; none found. Re-ran the citation-key consistency check (all 31 `.bib` keys defined and cited,
+none orphaned) and the word-count script after every edit round rather than only at the end.
+
+## Open items after Phase 5, round 2
+
+Unchanged from round 1's open-items list above — none of round 2's findings touched author contributions,
+the generative-AI declaration, the data-repository/DOI choice, or the power-analysis question, per the
+author's explicit instruction to leave those flagged as before. Additionally:
+
+6. **Citation pattern worth watching**: all 8 defective references from finding 3a were recent (2020–2026),
+   multi-author, non-Puerto-Rico-specific papers with plausible-sounding name substitutions (Ksenia→Kellianne,
+   Joshua→Jacob, etc.), not random corruption. If any further references are added before submission, verify
+   every author name directly against CrossRef, not just the title/DOI/journal — that check is what caught
+   these, and a lighter check (title/DOI only, which is what round 1's Pass 3a and this round's first
+   background-agent pass both did) would have missed most of them.

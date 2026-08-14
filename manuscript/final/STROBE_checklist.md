@@ -1,16 +1,18 @@
 # STROBE checklist — cross-sectional studies
 
 Manuscript: *Ceremonial Entheogen Use in Puerto Rico: A Descriptive Survey of Participants and a Small
-Facilitator Subsample*. Section references are to `manuscript/drafts/v3_draft.tex`; "Suppl." refers to
+Facilitator Subsample*. Section references are to `manuscript/drafts/v4_draft.tex`; "Suppl." refers to
 `manuscript/drafts/supplement.tex`.
 
 The Journal of Psychoactive Drugs does not mandate STROBE (see `manuscript/JOURNAL_REQUIREMENTS.md`). This
 checklist is completed anyway, per `MANUSCRIPT_PLAN.md` Phase 3, because reviewers of a non-probability
 survey will look for it.
 
-Refreshed for v3 (Phase 5 peer-review revision). Items 13a and 13c are now closed — Figure 1 exists and
-shows every stage including the participant continuation gate — and item 22 is closed on the corresponding
-author's confirmation that the study was unfunded.
+Refreshed for v4 (Phase 5, round 2 peer-review revision). Items 13a and 13c closed in round 1 — Figure 1
+exists and shows every stage including the participant continuation gate — and item 22 closed on the
+corresponding author's confirmation that the study was unfunded. Round 2 did not change the status of any
+STROBE item; its findings (word count, reference accuracy, two prose-number corrections) are not
+STROBE-scored. Item 10 remains the only open row.
 
 | # | Item | Where addressed | Status |
 |---|---|---|---|

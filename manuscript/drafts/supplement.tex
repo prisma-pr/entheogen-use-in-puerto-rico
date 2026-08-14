@@ -1,10 +1,12 @@
 % supplement.tex — Supplementary Material for "Ceremonial Entheogen Use in Puerto Rico"
-% Phase 5 revision (accompanies drafts/v3_draft.tex). Holds everything moved out of the
+% Phase 5, round 2 revision (accompanies drafts/v4_draft.tex). Holds everything moved out of the
 % main text to meet the JPD 4,000-word cap.
-% Numbers trace to outputs/report_v2.md except the facilitator-branch distributions and the
-% epsilon-squared values added in Phase 5, which are direct recomputations from
-% data/results_7_15_2026.xlsx via analysis/data_prep.load(); instrument wording traces to
-% manuscript/sources/instrument_documentation.md (extracted from data/koboxls.xlsx).
+% Numbers trace to outputs/report_v2.md except the facilitator-branch distributions, the
+% epsilon-squared values added in Phase 5 round 1, and the permutation p-value and median
+% correction added in Phase 5 round 2, all direct recomputations from
+% data/results_7_15_2026.xlsx via analysis/data_prep.load() / analysis/stats_helpers.py;
+% instrument wording traces to manuscript/sources/instrument_documentation.md (extracted
+% from data/koboxls.xlsx).
 
 \documentclass[12pt]{article}
 
@@ -213,14 +215,19 @@ for a future, larger facilitator sample; they are not evidence for or against an
 The preparation-to-satisfaction comparison, designated in the analysis plan as the primary comparison
 before any test was run, is reported uncorrected in the main text and is excluded from every family below.
 The study was not preregistered. All other bivariate tests were assigned in advance to one of four
-families and corrected jointly within family by the Benjamini--Hochberg false-discovery-rate procedure.
-Families are kept separate because they share neither exposures nor outcome domains. \textbf{No test in any
-family was significant at $q<0.05$.}
+thematically organized families and corrected jointly within family by the Benjamini--Hochberg
+false-discovery-rate procedure. Two variables, non-consensual contact and screening received, recur as
+predictor or outcome across three of the four families (see the safety-domain and legal-knowledge families
+below), so family-wise correction does not bound the error rate for conclusions about either variable across
+every test in which it appears; no q-value in any family is below 0.05, so this does not change any result.
+\textbf{No test in any family was significant at $q<0.05$.}
 
 \begin{table}[htbp]
 \centering
 \caption{Benjamini--Hochberg correction, bivariate family. $\dagger$ marks an $\varepsilon^2$ whose
-bias-corrected value was negative and is displayed truncated to 0.00.}
+bias-corrected value was negative and is displayed truncated to 0.00. $\ddagger$: a tie-aware permutation
+check (10,000 label permutations, seed 20260715) gave $p=0.010$ for this test, the only one in this family
+reaching uncorrected significance; its ``no''-background group contributes only 3 non-missing values.}
 \begin{tabular}{lrrr}
 \toprule
 Test & raw $p$ & BH $q$ & $\varepsilon^2$ \\
@@ -228,7 +235,7 @@ Test & raw $p$ & BH $q$ & $\varepsilon^2$ \\
 Preparation (3-level) $\rightarrow$ satisfaction (KW) & 0.120 & 0.359 & 0.04 \\
 Comfort/safety by prior knowledge of facilitator background (KW) & 0.326 & 0.422 & 0.00 \\
 Comfort/safety by screening received (KW) & 0.301 & 0.422 & 0.01 \\
-Trust in facilitator by prior knowledge of background (KW) & 0.017 & 0.102 & 0.10 \\
+Trust in facilitator by prior knowledge of background (KW) & $0.017^{\ddagger}$ & 0.102 & 0.10 \\
 Trust in facilitator by screening received (KW) & 0.679 & 0.679 & $0.00^{\dagger}$ \\
 Harm-reduction practice score $\rightarrow$ satisfaction (KW) & 0.352 & 0.422 & 0.00 \\
 \bottomrule
@@ -293,7 +300,7 @@ Most-recent-ceremony legal worry by non-consensual contact & 0.611 & 0.741 & $0.
 
 \noindent
 The only legal-domain comparison reaching uncorrected significance was most-recent-ceremony legal worry by
-disclosure to a health professional ($H=6.92$, $p=0.031$, $\varepsilon^2=0.09$): median 2 (IQR 0--2) among
+disclosure to a health professional ($H=6.92$, $p=0.031$, $\varepsilon^2=0.09$): median 1.5 (IQR 0--2) among
 the 8 reporting disclosure against median 0 (IQR 0--0) among the 47 reporting none. It did not survive
 correction ($q=0.283$). Two further legal items were not testable: a general legal-worry item reached only
 six respondents because of the skip-logic error described in \S\ref{sec:logic}, and a facilitator
