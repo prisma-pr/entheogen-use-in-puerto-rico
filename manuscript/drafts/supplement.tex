@@ -1,0 +1,438 @@
+% supplement.tex — Supplementary Material for "Ceremonial Entheogen Use in Puerto Rico"
+% Phase 5 revision (accompanies drafts/v3_draft.tex). Holds everything moved out of the
+% main text to meet the JPD 4,000-word cap.
+% Numbers trace to outputs/report_v2.md except the facilitator-branch distributions and the
+% epsilon-squared values added in Phase 5, which are direct recomputations from
+% data/results_7_15_2026.xlsx via analysis/data_prep.load(); instrument wording traces to
+% manuscript/sources/instrument_documentation.md (extracted from data/koboxls.xlsx).
+
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{array}
+\emergencystretch=3em
+
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thesection}{S\arabic{section}}
+
+\title{Supplementary Material\\
+\large Ceremonial Entheogen Use in Puerto Rico: A Descriptive Survey of Participants and a Small
+Facilitator Subsample}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent
+All results below derive from the same analytic sample described in the main text ($N=73$ respondents who
+identified a role; participant branch $n=72$ self-identified of whom 69 were routed past the continuation
+gate, facilitator branch $n=8$, 7 dual-role). The structural-skip and ``prefer not to answer'' conventions
+are those stated in the Methods and are applied uniformly here. Counts are exact throughout, including
+cells below five: as the Methods explain, the disclosure protection is the anonymous, aggregate design
+rather than cell masking. The bias-corrected $\varepsilon^2$ formula can return small negative values when
+an effect is indistinguishable from zero; these are displayed truncated to 0.00 and marked $\dagger$,
+applied uniformly.
+
+\section{Instrument: verbatim wording and scale anchors}
+
+The questionnaire was deployed as a single bilingual KoboToolbox XLSForm with Spanish as the default
+language and English selectable through the platform's language switcher. Every item carries both a Spanish
+and an English label in the same form; this is a native bilingual instrument rather than two separate
+questionnaires or a post-hoc translation. English wording is reproduced below.
+
+\begin{table}[htbp]
+\centering
+\caption{Verbatim wording and anchors for the items carrying the main text's principal results.}
+\begin{tabular}{p{3cm}p{6cm}p{5cm}}
+\toprule
+Item (construct) & Wording & Response options \\
+\midrule
+Satisfaction \newline (primary outcome) &
+``From 0 to 6, how pleasant was the ceremony?'' &
+0 Very unpleasant; 1 Unpleasant; 2 Somewhat unpleasant; 3 Neither pleasant nor unpleasant; 4 Somewhat
+pleasant; 5 Pleasant; 6 Very pleasant; Prefer not to answer \\
+\addlinespace
+Self-directed preparation \newline (primary exposure) &
+``Aside from the facilitator's instructions or recommendations, do you personally engage in preparation for
+these ceremonies?'' &
+Yes; Sometimes; No; Prefer not to answer \\
+\addlinespace
+In-ceremony comfort and safety &
+``During the ceremony, how would you describe your overall sense of comfort and safety?'' &
+0 I felt very uncomfortable or unsafe; 1 At times I felt somewhat uncomfortable or unsafe; 2 I felt mostly
+comfortable and safe; 3 I felt completely comfortable and safe; Prefer not to answer \\
+\addlinespace
+Trust in facilitator &
+``How much did you trust the person who facilitated the ceremony?'' &
+0 Not at all; 1 A little; 2 Moderately; 3 A lot; 4 Completely; Prefer not to answer \\
+\addlinespace
+Non-consensual physical contact \newline (lifetime) &
+``Have you ever experienced physical touch during a ceremony that felt unexpected or that you did not
+clearly agree to beforehand? This could include moments where you were unsure, uncomfortable, or did not
+remember giving permission.'' &
+Yes; No; I'm not sure; Prefer not to answer \\
+\addlinespace
+Non-consensual physical contact \newline (most recent ceremony) &
+``During your most recent ceremony, did you experience any physical touch that felt unexpected or that you
+didn't clearly agree to beforehand?'' &
+Yes; No; I'm not sure; Prefer not to answer \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+Three notes on coding. First, the preparation item measures presence and frequency of the respondent's
+\emph{own} preparation, deliberately separate from any instructions the facilitator gave; a companion
+open-text field captured what that preparation consisted of. The construct is therefore heterogeneous by
+design rather than by instrument failure. It also asks about ``these ceremonies'' as a general practice,
+while the satisfaction outcome and the two facilitator-practice items ask about the most recent ceremony
+alone --- a referent difference that the main text discloses wherever the two are related. Second, the raw
+choices sheet lists the comfort-and-safety
+options best-first, the reverse of the ascending 0--3 code used throughout the analysis. The analysis
+re-orders these by semantic content so that a higher code always means a more positive response, consistent
+with every other ordinal scale in the study. A reviewer cross-checking the raw XLSForm should expect this
+difference.
+
+\section{Facilitator self-reported practice}
+
+Eight respondents identified as facilitators, and \textbf{seven of the eight also identified as
+participants}. Every facilitator who answered a substantive facilitator item is one of those seven, so this
+branch is largely a subset of the participant branch rather than a separate set of people, and the tables
+below are \emph{not} independent of the participant-side results in the main text. What remains unlinked is
+the \emph{ceremony}: no ceremony or facilitator identifier connects any participant's report to the
+facilitator who ran that ceremony, and for a dual-role respondent the ceremonies led are different events
+from the ones attended. No group comparison at this base is meaningful and none is presented; these tables
+are descriptive context only and must not be read against any participant-reported item as though the two
+described the same ceremonies.
+
+\noindent
+\textbf{A note on denominators.} Eight respondents entered this branch but only seven answered any
+facilitator item; the eighth (the sole facilitator-only respondent) answered none. Every percentage in both
+tables below is therefore computed on the seven who answered, not on the base of eight.
+
+\begin{table}[htbp]
+\centering
+\caption{Facilitator training, screening approach, and distress response (select-multiple items; base
+$n=7$ answering; percentages of that base need not sum to 100\%).}
+\begin{tabular}{p{2.8cm}p{7.2cm}rr}
+\toprule
+Item & Category & $n$ & \% answering \\
+\midrule
+Training / experience & Personal experience and self-study & 6 & 86 \\
+                      & Mentorship or apprenticeship learning & 4 & 57 \\
+                      & Family or ancestral tradition & 3 & 43 \\
+                      & Formal certifications & 0 & 0 \\
+                      & Academic courses or workshops & 0 & 0 \\
+\addlinespace
+Screening approach    & Initial conversation or interview with the person & 6 & 86 \\
+                      & Asks about relevant medical history & 4 & 57 \\
+                      & Asks about current medication & 4 & 57 \\
+                      & Asks about mental health challenges & 3 & 43 \\
+                      & Welcomes anyone who feels called to participate & 2 & 29 \\
+                      & Other & 2 & 29 \\
+\addlinespace
+Response to a         & Singing, playing music, or using sound & 5 & 71 \\
+difficult experience  & Grounding exercises (breathing, sensory focus) & 4 & 57 \\
+                      & Calming or supportive words & 3 & 43 \\
+                      & Physical touch (with consent or as culturally appropriate) & 2 & 29 \\
+                      & Other & 2 & 29 \\
+                      & ``Trip killer'' medication & 1 & 14 \\
+                      & Has never been in this situation & 1 & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Facilitator practice context, emergency planning, witnessed crisis signs, and readiness composite.
+Base is the same $n=7$ answering used in the preceding table.}
+\begin{tabular}{p{4.6cm}p{5.4cm}rr}
+\toprule
+Item & Category & $n$ & \% answering \\
+\midrule
+Gives preparation instructions & Yes & 6 & 86 \\
+                             & Prefer not to answer & 1 & 14 \\
+\addlinespace
+Typical environment          & Outdoor space or near nature & 6 & 86 \\
+                             & In my home & 1 & 14 \\
+\addlinespace
+Dosing approach              & Participants decide their own dose & 3 & 43 \\
+                             & Other & 2 & 29 \\
+                             & Conservative initial dose, then more if needed & 1 & 14 \\
+                             & A single dose for everyone & 1 & 14 \\
+\addlinespace
+Emergency plan               & Informal or unwritten approach & 4 & 57 \\
+                             & Depends on the situation & 3 & 43 \\
+                             & Formal / written plan & 0 & 0 \\
+\addlinespace
+Crisis signs witnessed       & They appear disoriented & 3 & 43 \\
+(select-multiple)            & They look overwhelmed & 3 & 43 \\
+                             & Fainting or dizziness & 3 & 43 \\
+                             & Difficulty breathing & 3 & 43 \\
+                             & Panic attacks & 3 & 43 \\
+                             & I'm not sure / it depends & 3 & 43 \\
+                             & No response or loss of consciousness & 2 & 29 \\
+                             & Erratic or unusual behavior & 2 & 29 \\
+                             & Rapid heartbeat or physical agitation & 2 & 29 \\
+                             & Signs of self-harm or suicidal thoughts & 2 & 29 \\
+                             & Aggressive or threatening behavior & 2 & 29 \\
+                             & Allergic reactions & 2 & 29 \\
+                             & Paranoia or extreme fear & 2 & 29 \\
+                             & Other & 2 & 29 \\
+                             & Reliving or re-experiencing past trauma & 1 & 14 \\
+                             & Excessive purging (vomiting, diarrhea) & 0 & 0 \\
+\addlinespace
+Readiness composite          & Score 3.5 of 4 & 6 & 86 \\
+                             & Score 2.5 of 4 & 1 & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+The facilitator branch is close to constant: every facilitator answering reported some form of training and
+some screening approach, and none selected the formal emergency-plan option. With that little variance at
+$n=7$, neither a reliability statistic nor an association test is informative. Three of the seven reported
+several crisis signs each, two reported a single sign, one answered only ``I'm not sure'' and one only
+``other'' --- so the counts above concentrate in three respondents and must not be read as rates.
+Association tests between witnessed crisis signs and facilitator-reported protocol items---the one place in
+the study where both variables sit on the same side of the survey and no linkage gap exists---returned
+undefined odds ratios: Fisher's exact $p=0.143$ against the distress-response protocol and $p=0.429$
+against the emergency plan, with two further tests unrunnable for insufficient non-degenerate data. Every
+$2\times2$ table here has at least one margin of 2 or fewer. These results establish an analytic approach
+for a future, larger facilitator sample; they are not evidence for or against an association.
+
+\section{Multiplicity correction: all four test families}
+
+The preparation-to-satisfaction comparison, designated in the analysis plan as the primary comparison
+before any test was run, is reported uncorrected in the main text and is excluded from every family below.
+The study was not preregistered. All other bivariate tests were assigned in advance to one of four
+families and corrected jointly within family by the Benjamini--Hochberg false-discovery-rate procedure.
+Families are kept separate because they share neither exposures nor outcome domains. \textbf{No test in any
+family was significant at $q<0.05$.}
+
+\begin{table}[htbp]
+\centering
+\caption{Benjamini--Hochberg correction, bivariate family. $\dagger$ marks an $\varepsilon^2$ whose
+bias-corrected value was negative and is displayed truncated to 0.00.}
+\begin{tabular}{lrrr}
+\toprule
+Test & raw $p$ & BH $q$ & $\varepsilon^2$ \\
+\midrule
+Preparation (3-level) $\rightarrow$ satisfaction (KW) & 0.120 & 0.359 & 0.04 \\
+Comfort/safety by prior knowledge of facilitator background (KW) & 0.326 & 0.422 & 0.00 \\
+Comfort/safety by screening received (KW) & 0.301 & 0.422 & 0.01 \\
+Trust in facilitator by prior knowledge of background (KW) & 0.017 & 0.102 & 0.10 \\
+Trust in facilitator by screening received (KW) & 0.679 & 0.679 & $0.00^{\dagger}$ \\
+Harm-reduction practice score $\rightarrow$ satisfaction (KW) & 0.352 & 0.422 & 0.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Benjamini--Hochberg correction, substance-stratified family.}
+\begin{tabular}{lrrr}
+\toprule
+Test & raw $p$ & BH $q$ & effect size \\
+\midrule
+Satisfaction by substance group (KW) & 0.083 & 0.166 & $\varepsilon^2=0.05$ \\
+Non-consensual contact by substance group (permutation $\chi^2$) & 0.486 & 0.486 & $V=0.17$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Benjamini--Hochberg correction, safety-domain family. The non-consensual contact outcome is the
+lifetime item, while the three participant-side exposures crossed against it all ask about the most recent
+ceremony; 3 of the 5 respondents reporting the event ever placed it at an earlier ceremony, so for those
+three the exposure and the outcome describe different events. This referent mismatch applies to every row
+in the upper block and is the main reason these tests are hypothesis-generating only.}
+\begin{tabular}{p{8.2cm}rrl}
+\toprule
+Test & raw $p$ & BH $q$ & effect size \\
+\midrule
+Non-consensual contact $\times$ prior knowledge of facilitator background & 0.047 & 0.236 & $V=0.38$ \\
+Non-consensual contact $\times$ screening received & 0.094 & 0.236 & $V=0.32$ \\
+Harm-reduction score (binarized) $\times$ non-consensual contact & 0.641 & 0.641 & $V=0.10$ \\
+\addlinespace
+Witnessed crisis signs $\times$ distress-response protocol (facilitator branch) & 0.143 & 0.238 & OR undefined \\
+Witnessed crisis signs $\times$ emergency plan (facilitator branch) & 0.429 & 0.536 & OR undefined \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Benjamini--Hochberg correction, legal-knowledge family. Predictors are three participant-side
+legal items; outcomes are disclosure to a health professional, screening received, and non-consensual
+contact. All tests Kruskal--Wallis. $\dagger$ marks a truncated $\varepsilon^2$, as above.}
+\begin{tabular}{lrrr}
+\toprule
+Test & raw $p$ & BH $q$ & $\varepsilon^2$ \\
+\midrule
+General legal knowledge by disclosure to a health professional & 0.258 & 0.581 & 0.01 \\
+Most-recent-ceremony legal knowledge by disclosure & 0.164 & 0.495 & 0.03 \\
+Most-recent-ceremony legal worry by disclosure & 0.031 & 0.283 & 0.09 \\
+General legal knowledge by screening received & 0.412 & 0.741 & $0.00^{\dagger}$ \\
+Most-recent-ceremony legal knowledge by screening received & 0.659 & 0.741 & $0.00^{\dagger}$ \\
+Most-recent-ceremony legal worry by screening received & 0.914 & 0.914 & $0.00^{\dagger}$ \\
+General legal knowledge by non-consensual contact & 0.617 & 0.741 & $0.00^{\dagger}$ \\
+Most-recent-ceremony legal knowledge by non-consensual contact & 0.165 & 0.495 & 0.03 \\
+Most-recent-ceremony legal worry by non-consensual contact & 0.611 & 0.741 & $0.00^{\dagger}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+The only legal-domain comparison reaching uncorrected significance was most-recent-ceremony legal worry by
+disclosure to a health professional ($H=6.92$, $p=0.031$, $\varepsilon^2=0.09$): median 2 (IQR 0--2) among
+the 8 reporting disclosure against median 0 (IQR 0--0) among the 47 reporting none. It did not survive
+correction ($q=0.283$). Two further legal items were not testable: a general legal-worry item reached only
+six respondents because of the skip-logic error described in \S\ref{sec:logic}, and a facilitator
+legal-knowledge item sits on the unlinked facilitator branch with no participant-side counterpart.
+
+\section{Exploratory proportional-odds model}
+
+This model adjusts preparation for age and facilitator trust simultaneously. The full covariate set
+specified in the original protocol was not estimable: gender cells were too thin for a four-level
+categorical predictor, and screening overlapped substantively with the trust and background measures
+already in the model. A prespecified three-predictor fallback was used instead. The outcome was collapsed
+to three ordered levels for this model only, because the raw seven-level scale has cells as small as one to
+three respondents at the low end and risks quasi-complete separation at this sample size; every other table
+in this paper retains the full 0--6 scale.
+
+\begin{table}[htbp]
+\centering
+\caption{Proportional-odds model for reported satisfaction. Complete-case $n=62$ of the 63 participants
+with a non-missing outcome. Collapsed outcome: low/mixed (0--3) $n=9$; mostly positive (4--5) $n=19$; very
+positive (6) $n=34$.}
+\begin{tabular}{lrrr}
+\toprule
+Predictor & OR & 95\% CI & $p$ \\
+\midrule
+Age (years) & 0.99 & 0.94--1.03 & 0.527 \\
+Any preparation vs.\ none & 5.21 & 0.84--32.41 & 0.077 \\
+Trust in facilitator (0--4) & 2.20 & 1.06--4.53 & 0.033 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+Omnibus likelihood-ratio test against an intercept-and-cutpoint-only model: $\chi^2(3)=8.68$, $p=0.034$;
+McFadden pseudo-$R^2=0.07$. \textbf{Power caveat.} Sixty-two complete cases support five estimated
+parameters (three slopes and two cutpoints), roughly 12 cases per parameter, below conventional rules of
+thumb for stable ordinal-regression estimates. The proportional-odds assumption was not formally tested,
+the sample being too small to test it reliably, and is simply assumed. Every estimate in this table is
+exploratory and hypothesis-generating, and should not be presented without this caveat.
+
+\section{Psychometric evidence for the instrument}
+
+The instrument was purpose-built, so this is its first reliability evidence. The original protocol's
+language implies multi-item Likert batteries, but the form contains none: every Likert-shaped option set
+maps to at most two items, and most two-item pairs split across the unlinked facilitator and participant
+branches. Two genuine same-respondent pairs are testable.
+
+\begin{table}[htbp]
+\centering
+\caption{Reliability of the two testable item pairs and of the participant-side practice index.}
+\begin{tabular}{lrrr}
+\toprule
+Scale & Cronbach's $\alpha$ & 95\% CI & $n$ \\
+\midrule
+Trust in facilitator + in-ceremony comfort/safety (2 items) & 0.58 & 0.31--0.74 & 64 \\
+Legal knowledge, general + most-recent ceremony (2 items) & 0.86 & 0.75--0.92 & 55 \\
+Harm-reduction practice index (3 items) & 0.14 & $-0.36$--0.47 & 54 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+With only two items, $\alpha$ is a monotonic transform of the pairwise correlation and the item-rest
+correlations are not independent numbers. The corresponding Spearman correlations are $\rho=0.39$
+($p=0.002$, $n=64$) for the trust-and-comfort pair and $\rho=0.79$ ($p<0.001$, $n=55$) for the
+legal-knowledge pair; the latter two items required harmonization onto a shared 0--4 code because the
+most-recent-ceremony version omits the bottom category its general counterpart carries. The practice
+index's low $\alpha$ has two non-exclusive explanations: preparation, facilitator vetting, and being
+screened capture distinct protective practices rather than one latent construct, and their referents differ
+--- preparation is asked as a general practice while the other two ask about the most recent ceremony, so
+the three items are not even describing the same occasions. Either way the score is read as a count of
+practices present, not as a validated scale.
+
+A third candidate pair was untestable: a perceived-life-impact item had zero variance, with all 67
+respondents answering selecting the same option, so it cannot correlate with anything and $\alpha$ is
+undefined. This is reported as a data-quality finding, not a scale result.
+
+\section{Instrument skip-logic errors}
+\label{sec:logic}
+
+Two errors were identified in the fielded form and are reported so that any future deployment corrects
+them.
+
+First, a follow-up item asking why a respondent felt uncomfortable or unsafe received zero responses. Its
+relevance condition required the comfort-and-safety variable to equal two different values simultaneously,
+making the item structurally unreachable rather than merely unpopular. No respondent could have answered
+it.
+
+Second, a general legal-worry item was gated on the general legal-knowledge item equaling ``prefer not to
+answer''---the opposite of what a parallel item would require---so only six respondents ever reached it,
+while its most-recent-ceremony counterpart was asked broadly ($n=57$). The two are therefore neither
+comparable nor parallel, and the general item is excluded from all analyses.
+
+\section{Data quality: attention checks and duplicate adjudication}
+
+Attention checks were branch-specific rather than uniform: facilitators were judged on three items and
+participants on four. Two respondents answered at least one attention item incorrectly. Per protocol these
+rows were flagged and retained, not dropped.
+
+The survey platform never populated its duplicate-detection field and recorded no IP or device information,
+so duplicate submissions were screened manually on the respondent-chosen nickname and password. Three
+signals were examined: an exact nickname-and-password match, a repeated nickname alone, and a repeated
+password alone. Only the first indicates a duplicate submission rather than coincidental reuse of a common
+word.
+
+Exactly one exact-match pair exists across the 100 submissions. Its earlier member is an abandoned blank
+submission two days before the completed one---the same respondent trying twice, abandoning, and
+completing on the second attempt---and was already excluded by the pre-existing abandonment rule.
+\textbf{Zero analytic rows require exclusion on duplicate grounds}, and no sensitivity re-run comparing
+adjudicated against unadjudicated samples is possible or necessary, because the two samples are identical.
+
+Nickname-only repeats (9 rows) and password-only repeats (12 rows) were inspected individually. The
+repeated strings are common Spanish words that respondents in this thematic context would plausibly choose
+independently---\emph{Amor}, \emph{S\'i}, \emph{Secreta}, \emph{Hongos}, \emph{Luna}---and in every case
+where a repeat might conceivably indicate the same person, all members already fall outside the analytic
+sample as abandoned or screened-out submissions. No pair has both members inside the analytic sample with a
+same-person signal strong enough to justify exclusion.
+
+\section{Qualitative corpus and coding scaffold}
+
+Thirty-seven open-text fields yielded 285 non-empty answers, mixed Spanish and English (220 answers, 77\%,
+classified as Spanish; 54, 19\%, English; 11, 4\%, mixed or other, by a heuristic that characterizes the
+corpus rather than validly classifying each item). The most-answered fields were an experience highlight
+(58 answers), an opinion-on-safety item (54), a description of preparation guidance received (45), a
+description of screening questions asked (38), and a description of self-directed preparation (30).
+
+A seed keyword scan against the research team's prespecified categories returned legality (19 answers),
+medical presence (19), facilitator vetting (14), education (13), and consent (1). That the consent category
+is almost empty in a corpus where legality and facilitator vetting are the dominant themes is itself worth
+noting for the successor instrument, given that 5 respondents reported non-consensual physical contact on
+the closed-ended item.
+The corpus is provided to the research team in long format with an accompanying manual-coding template.
+This is a scaffold to support thematic analysis, not a substitute for it, and no interpretation of the
+qualitative material is offered in the main text.
+
+\section{Reproducibility}
+
+Every number in the main text and in this supplement is generated by an executable analysis pipeline
+(Python) that reads the raw survey export and the XLSForm directly; all response decodes derive from the
+form rather than from hand-entered value maps. The pipeline regenerates the full statistical report in one
+command. Code is available as described in the main text's data-availability statement.
+
+\end{document}

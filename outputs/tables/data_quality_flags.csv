@@ -1,0 +1,20 @@
+﻿row,role,nickname,password,_submission_time,attn_branch,attn_answered,attn_correct,attn_failed,attn_fail_flag,dup_combo_flag,dup_nickname_flag,dup_password_flag,dup_key
+15,participant_only,Michael,Hongos,2026-03-12 02:08:46,participant,4,4,0,False,False,False,True,michael | hongos
+18,participant_only,Luz,Amor,2026-03-20 13:40:40,participant,4,4,0,False,False,False,True,luz | amor
+19,participant_only,Rafy,Si,2026-03-25 00:01:23,participant,4,4,0,False,False,False,True,rafy | si
+20,participant_only,Rafa,Amor,2026-03-27 01:03:53,participant,2,2,0,False,False,False,True,rafa | amor
+21,participant_only,mc,Amor,2026-03-27 03:44:46,participant,4,4,0,False,False,False,True,mc | amor
+23,participant_only,Bart,Secreta,2026-04-05 11:38:03,participant,3,3,0,False,False,False,True,bart | secreta
+36,dual,FJ,Si,2026-02-26 13:57:04,facilitator,3,3,0,False,False,False,True,fj | si
+43,participant_only,Luna,Hecate,2026-03-17 03:53:38,participant,4,4,0,False,False,True,False,luna | hecate
+60,participant_only,Luna,Triplemoonyoga,2026-02-26 16:55:09,participant,4,4,0,False,False,True,False,luna | triplemoonyoga
+61,participant_only,Riki,Aktharak,2026-02-28 14:13:22,participant,4,4,0,False,True,True,True,riki | aktharak
+63,participant_only,Sol Albizu,Xo',2026-03-05 11:45:03,participant,4,2,2,True,False,False,False,sol albizu | xo'
+65,participant_only,Peregrino,Secreta,2026-02-27 13:10:52,participant,4,3,1,True,False,False,True,peregrino | secreta
+68,dual,Seli,Amor,2026-02-24 17:36:15,facilitator,3,3,0,False,False,False,True,seli | amor
+77,abandoned_blank,Riki,Aktharak,2026-02-26 02:22:43,none,0,0,0,False,True,True,True,riki | aktharak
+80,abandoned_blank,Enid,Ayahusca,2026-03-02 13:48:59,none,0,0,0,False,False,True,False,enid | ayahusca
+81,screenout_no_no,Luigi,Limon,2026-03-05 17:52:12,none,0,0,0,False,False,True,False,luigi | limon
+85,abandoned_blank,LuiGi,Hongos,2026-03-10 02:34:02,none,0,0,0,False,False,True,True,luigi | hongos
+90,abandoned_blank,LuiGi,Oro,2026-03-12 19:09:43,none,0,0,0,False,False,True,False,luigi | oro
+92,abandoned_blank,Enid,Ivannalove,2026-03-25 23:01:35,none,0,0,0,False,False,True,False,enid | ivannalove

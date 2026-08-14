@@ -1,0 +1,125 @@
+% Journal of Psychoactive Drugs — submission-format skeleton
+% Built from verified requirements in ../JOURNAL_REQUIREMENTS.md (no official T&F LaTeX class
+% for this journal was available; JPD is not in the venue-templates skill's bundled set).
+% Structure only — Phase 3 fills this in. Do not add content directly here; edit drafts/v1_draft.tex.
+%
+% Verified formatting (see ../JOURNAL_REQUIREMENTS.md for sourcing/confidence per line):
+%   - 4,000 words max, Introduction–Methods–Results–Discussion combined (verbatim from JPD instructions)
+%   - Unstructured abstract, <=200 words (verbatim)
+%   - Chicago Manual of Style, Author-Date references (verbatim) — NOT APA
+%   - Double-spaced, 1in margins, numbered pages, 12pt Times New Roman or similar, American spelling
+%   - 4-6 keywords
+
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}                 % 12pt Times New Roman per JPD spec
+\usepackage[margin=1in]{geometry}  % 1-inch margins per JPD spec
+\usepackage{setspace}
+\doublespacing                     % double-spaced per JPD spec
+\usepackage{lineno}                % line numbers — standard for peer review, harmless if unrequired
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+% --- References: Chicago Author-Date ---
+% Primary choice: natbib + chicago.bst (classic "Chicago" BibTeX style, author-date variant).
+% Confirm chicago.bst is available wherever compilation happens (see JOURNAL_REQUIREMENTS.md —
+% not found on this machine's PATH; not a Phase 0 blocker, must be confirmed before Phase 6).
+\usepackage[authoryear,round]{natbib}
+\bibliographystyle{chicago}
+
+% --- Alternative (uncomment if biber/biblatex-chicago is available instead) ---
+% \usepackage[authordate,backend=biber,natbib=true]{biblatex-chicago}
+% \addbibresource{../references/references.bib}
+
+\title{[TITLE — descriptive, first-of-kind framing per MANUSCRIPT_PLAN.md Phase decisions]}
+
+\author{
+  [Author One]$^{1}$ \and [Author Two]$^{2}$ \and \ldots \\
+  \small $^{1}$[Affiliation One] \\
+  \small $^{2}$[Affiliation Two] \\
+  \small Corresponding author: [name, email] % author order/affiliations — open item, see MANUSCRIPT_PLAN.md
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+\linenumbers
+
+\begin{abstract}
+\noindent
+% UNSTRUCTURED, <=200 words. No Background/Methods/Results/Conclusions headers — JPD requirement,
+% confirmed against 5 recently published JPD survey articles with zero exceptions.
+% Written LAST, after Phases 0-5 are complete and every number is final.
+[abstract text]
+\end{abstract}
+
+\noindent\textbf{Keywords:} [keyword 1]; [keyword 2]; [keyword 3]; [keyword 4] % 4-6 required
+
+\section{Introduction}
+% Phase 2 citations land here. Target: keep this section lean — the 4,000-word cap covers
+% Intro+Methods+Results+Discussion combined, and the current draft is already over budget.
+[content]
+
+\section{Methods}
+\subsection{Design}
+[content]
+\subsection{Recruitment and sample construction}
+% Phase 1d: recruitment/sampling facts recovered from the proposal narrative go here —
+% do NOT leave as [not reported in source], that gap is closed.
+[content]
+\subsection{Instrument and variable definitions}
+% Phase 1c: verbatim item wording + scale anchors from koboxls.xlsx
+[content]
+\subsection{Missing data, structural skips, and suppression}
+[content]
+\subsection{Statistical approach}
+[content]
+\subsection{Protocol deviations}
+[content]
+
+\section{Results}
+% Reuse draft's six subsections; patch every number resolved in Phase 1.
+[content]
+
+\section{Discussion}
+% Substantially expanded vs. current draft using Phase 2c comparator literature —
+% this is the section most likely to push the word count over budget; watch it closely.
+[content]
+
+\section{Limitations}
+[content]
+
+\section{Conclusion}
+[content]
+
+\section*{Author contributions}
+% CRediT roles — required disclosure per JOURNAL_REQUIREMENTS.md
+[content]
+
+\section*{Funding}
+[content]
+
+\section*{Competing interests}
+[content]
+
+\section*{Data availability}
+[content]
+
+\section*{Generative AI use declaration}
+% Required JPD disclosure — state LLM-assisted drafting/analysis tooling used in this project.
+[content]
+
+\bibliography{../references/references}
+
+% --- Supplementary material (NOT counted against the 4,000-word cap) ---
+% Everything the word-budget note in JOURNAL_REQUIREMENTS.md moves out of the main text:
+% full BH-correction-by-family table, facilitator self-report detail table, ordinal-model table,
+% STROBE checklist, instrument documentation table, qualitative coding scaffold.
+% Build as a separate supplement.tex, not appended here.
+
+\end{document}

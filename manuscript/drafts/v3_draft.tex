@@ -1,0 +1,715 @@
+% v3_draft.tex — Ceremonial Entheogen Use in Puerto Rico
+% Phase 5 (peer review) output. Applies every accepted finding from
+% manuscript/PEER_REVIEW.md to v2_draft.tex; see drafts/revision_notes.md for the
+% item-by-item disposition. Built on manuscript/drafts/v0_jpd_template.tex.
+% Numbers trace to outputs/report_v2.md except where the report does not carry a
+% univariate distribution; those are direct recomputations from
+% data/results_7_15_2026.xlsx via analysis/data_prep.load(), and are listed in
+% revision_notes.md.
+% Formatting per manuscript/JOURNAL_REQUIREMENTS.md (Journal of Psychoactive Drugs).
+% Word budget: Introduction-Methods-Results-Discussion <= 4,000 words (strict, per author decision).
+
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\doublespacing
+\usepackage{lineno}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}  % Table 3 gained structural-skip rows in v3 and no longer fits one page
+\usepackage{amsmath}
+\usepackage{url}
+\urlstyle{same}  % render URLs in the body font; avoids a Courier dependency
+\emergencystretch=3em  % double spacing leaves little slack; prevents overfull lines at long citations
+\usepackage[authoryear,round]{natbib}
+\bibliographystyle{chicago}
+
+\title{Ceremonial Entheogen Use in Puerto Rico: A Descriptive Survey of Participants
+and a Small Facilitator Subsample}
+
+\author{
+  Yamil O. Ortiz Ortiz$^{1}$ \and Jean C. V\'elez Rodr\'iguez$^{2}$ \and Juli\'an M. Hern\'andez Torres$^{2,3}$ \and
+  Juliana Mill\'an-Torres$^{4}$ \and Paulina Rull\'an Farinacci$^{5}$ \and Carolina Riollano$^{6}$ \and
+  Ang\'elica N. Grajales Rold\'an$^{1}$ \and Adriana I. Rodr\'iguez Massa$^{1}$ \\[1em]
+  \begin{minipage}{0.92\textwidth}\centering\small\setstretch{1.15}
+  $^{1}$Centro de Investigaciones Sociales, Facultad de Ciencias Sociales, University of Puerto Rico,
+  R\'io Piedras Campus, San Juan, Puerto Rico \\
+  $^{2}$Puerto Rico Institute for Psychedelic Science, Medicine \& Awareness, San Juan, Puerto Rico \\
+  $^{3}$Behavioral Sciences Research Institute, University of Puerto Rico, Medical Sciences Campus,
+  San Juan, Puerto Rico \\
+  $^{4}$Colectivo Psicod\'elico de Puerto Rico, Colectivo Psicod\'elico Inc., and Within Psychological
+  Services, San Juan, Puerto Rico \\
+  $^{5}$Department of Psychiatry, School of Medicine, University of Puerto Rico, Medical Sciences Campus,
+  San Juan, Puerto Rico \\
+  $^{6}$Colectivo Psicod\'elico de Puerto Rico, San Juan, Puerto Rico \\[0.5em]
+  Corresponding author: Jean C. V\'elez Rodr\'iguez, jean.velez5@upr.edu
+  \end{minipage}
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+\linenumbers
+
+\begin{abstract}
+\noindent
+% ABSTRACT — unstructured, <=200 words (JPD requirement).
+Ceremonial entheogen use occurs in Puerto Rico outside clinical and regulatory structures, and the
+practices surrounding it have not been described. We conducted an anonymous, bilingual, cross-sectional
+online survey of adults aged 21 and over reporting involvement in entheogen-assisted ceremonies in Puerto
+Rico, recruited by convenience and chain referral, February--June 2026. Of 100 submissions, 73
+identified a role: 72 as participants and 8 as facilitators, 7 of whom were both. Respondents were
+middle-aged (mean 42.4 years), mostly university-educated, and almost all resident in Puerto Rico. Most
+recent ceremonies were typically single, multi-hour events in natural settings involving psilocybin
+mushrooms or ayahuasca, and satisfaction was strongly ceiling-weighted (median 6 of 6). Preparation was
+near-universal among those answering while pre-ceremony screening was not, and the small facilitator
+subsample described training and emergency planning as informal rather than credentialed. Five of 67
+participants answering reported ever experiencing non-consensual physical contact during a ceremony, and 2
+of 65 at their most recent one. A comparison of any preparation against none, specified in the analysis
+plan before testing, was positive in direction but rests on five unprepared respondents and is exploratory.
+These findings describe this sample only and support no prevalence or causal claim.
+\end{abstract}
+
+\noindent\textbf{Keywords:} entheogens; psychedelics; ceremonial use; Puerto Rico; harm reduction; survey research
+
+\section{Introduction}
+
+Ceremonial use of entheogens---psilocybin-containing mushrooms, ayahuasca, and related preparations taken
+in structured group or guided settings---has become substantially more visible across the Americas over the
+past two decades, largely outside the clinical-trial infrastructure that generates most of the contemporary
+research literature \citep{golden2022effects,carvalho2025scoping}. The resulting evidence base is
+asymmetric. Randomized clinical research characterizes carefully screened participants receiving
+standardized doses under monitored conditions, and its samples remain narrow
+\citep{hughes2024ethnoracial,marcus2026psychedelics}, while community ceremonial practice is documented
+mainly through ethnographic and qualitative work, with comparatively few survey-level descriptions of who
+takes part and under what conditions \citep{carvalho2025scoping}.
+
+Puerto Rico occupies an unusual position in this landscape. It is a Spanish-speaking Caribbean jurisdiction
+in which psilocybin, DMT, and related compounds are Schedule I substances under the federal Controlled
+Substances Act \citep{uscongress1970csa} and the territory's own aligned statute \citep{pr1971csa}, and
+which sits outside the state-level decriminalization and regulated-access reforms reshaping the legal
+environment in parts of the United States \citep{siegel2023psychedelic}. It is also a setting with a
+long-documented tradition of spiritually framed healing practice---espiritismo and related
+practices---described in the clinical and public health literature for more than four decades
+\citep{koss1980therapist,comasdiaz1981puertorican,bird1981sociopsychiatry,zerrate2022espiritismo}.
+
+Local survey evidence on entheogen use is nonetheless minimal. One published Puerto Rico--specific survey
+exists, conducted by members of the present research team, but it is narrower in scope: it characterizes
+psilocybin use patterns, motivations, and personality correlates rather than ceremonial practice, and
+addresses neither facilitation nor safety \citep{velezrodriguez2026psilocybin}. An unpublished thesis has
+examined university-community perceptions of psilocybin mushrooms \citep{doeltermorales2020hongos}. Neither
+describes how ceremonies are conducted. Basic descriptive questions---who takes part, which substances are
+used, where and for how long ceremonies occur, whether participants are prepared or screened beforehand,
+and what adverse experiences are reported---therefore have no published local answer.
+
+A descriptive characterization contributes in three ways. First, it establishes whether practices reported
+in a community sample resemble the harm-reduction structures clinical and retreat-based frameworks assume:
+preparation, pre-ceremony screening, and a plan for difficult experiences
+\citep{gorman2021psychedelic,pilecki2021ethical,dutton2025harm}. Second, it identifies which safety
+outcomes---including boundary violations, shown elsewhere to be measurable in naturalistic samples
+\citep{kruger2025psychedelic,peluso2020reflections}---occur at frequencies justifying measurement in a
+larger study. Third, it produces the instrument-level evidence needed before any confirmatory study is
+designed here. None of this depends on a test reaching significance: the description and its measurement
+lessons are the result.
+
+Our objectives were to describe the sample and the ceremonial context, and to examine bivariate
+associations between preparation and reported ceremony outcomes and between participant-observable
+facilitator practices and perceived safety. A safety and adverse-event domain, absent from the original
+protocol, was added during analysis. Every objective is descriptive. The design supports no statement about
+how common these practices are in Puerto Rico, and no statement about what any practice produces.
+
+\section{Methods}
+
+\subsection{Design, ethics, and consent}
+
+This was a single-timepoint, cross-sectional, self-administered online survey of adults reporting
+involvement in entheogen-assisted spiritual ceremonies in Puerto Rico. The sample was non-probability and
+the analysis unweighted. The study was approved by the Institutional Review Board of the University of
+Puerto Rico, Medical Sciences Campus (protocol 2509472552, approved 4 November 2025) and was fielded on
+KoboToolbox between 24 February and 9 June 2026. Participation was fully anonymous: no names, dates of
+birth, or other personal identifiers were collected. The information sheet---covering purpose, procedures,
+risks, voluntariness, and data retention---was presented within the questionnaire itself, and respondents
+who read it and proceeded to the items thereby gave informed consent. This procedure was described in the
+protocol submitted for ethical review and approved as described, so no signed consent document was
+collected or required. Every item offered ``prefer not to answer'', withdrawal was permitted at any point,
+no compensation was offered, and mental-health resources were listed. Reporting follows STROBE (checklist
+supplied as Supplementary Material).
+
+\subsection{Recruitment and sample construction}
+
+Recruitment used convenience sampling with chain referral, promoted through Facebook, Instagram, Twitter/X,
+and WhatsApp and by bulletin-board announcements at the University of Puerto Rico R\'io Piedras and Medical
+Sciences campuses. Inclusion criteria were age 21 or older, ability to read and write in Spanish, access to
+an internet-connected device, and prior participation in an entheogen-assisted spiritual ceremony in Puerto
+Rico. These criteria were self-assessed and advisory rather than enforced by instrument logic: only age
+gated the questionnaire, the form was fielded bilingually, respondents reporting no ceremony involvement
+reached the role fork regardless, and residence in Puerto Rico was never required. The recruitment target
+of 100 responses was met.
+
+Of the 100 submissions collected, 13 were abandoned before any substantive item and excluded, leaving 87
+respondents who reached the role-identification questions. Of those, 14 answered ``no'' to both role items,
+so 16\% of those reaching the role fork screened out; they are not described as a subgroup. The analytic
+sample is the remaining $N=73$ respondents who identified a role. Roles are not a partition: 72 identified
+as ceremony participants and 8 as facilitators, 7 of the 8 facilitators also identifying as participants,
+so the facilitator branch is largely a subset of the participant branch rather than a separate group of
+people. The branches are nonetheless unlinked \emph{at the ceremony level}---the instrument carries no
+ceremony or facilitator identifier, and for a dual-role respondent the ceremonies led are different events
+from those attended---so facilitator- and participant-reported measures cannot be crossed. One further
+routing rule governs every participant-side base: dual-role respondents reached the participant block only
+after a continuation prompt, and 3 of the 7 answered ``no'' and were shown no participant item. The
+participant branch is therefore 72 self-identified respondents of whom 69 were routed, those 3 appearing as
+structural skips throughout (Figure~\ref{fig:flow}).
+
+\subsection{Instrument}
+
+No validated Puerto Rico--specific instrument for characterizing ceremonial entheogen use exists, so the
+questionnaire was developed by the research team, reviewed iteratively, professionally translated, and
+given a final review for cross-language consistency. It was deployed as one bilingual XLSForm with Spanish
+as the default and English available through the platform's language switcher, so open-text responses were
+mixed-language.
+
+The primary outcome, satisfaction with the most recent ceremony, asked ``From 0 to 6, how pleasant was the
+ceremony?'' with anchors from \emph{very unpleasant} (0) to \emph{very pleasant} (6), and was treated as
+ordinal. The primary exposure asked whether, aside from the facilitator's instructions, the respondent
+personally engages in preparation for these ceremonies (yes / sometimes / no), capturing self-directed
+preparation only. The two differ in referent: the outcome asks about one event and the exposure about a
+general practice, so the primary analysis relates a single-ceremony outcome to a habitual exposure.
+Secondary participant-side measures---in-ceremony comfort and safety, trust in the facilitator, prior
+knowledge of the facilitator's background, whether screening questions were asked, and prior disclosure to
+a health professional---all refer to the most recent ceremony. The non-consensual contact item asked
+whether the respondent had \emph{ever} experienced physical touch during a ceremony that felt unexpected or
+that they had not clearly agreed to beforehand, explicitly including moments of uncertainty or absent
+recall; its breadth exceeds a narrower assault framing and the resulting figure should be read accordingly.
+A parallel item asked the same of the most recent ceremony alone, and both are reported. That lifetime
+referent does not match the facilitator-practice measures crossed against it in \S3.4, a mismatch restated
+where those results appear. Facilitator-branch items covered training, screening approach,
+distress-response protocol, emergency planning, and crisis signs witnessed. Three substance variables were
+kept distinct and never merged: facilitator-led substances, participant substances across all ceremonies
+attended, and the substance used in the most recent ceremony. Attention checks were branch-specific.
+Verbatim wording and anchors appear in Supplementary Table~S1.
+
+\subsection{Missing data, structural skips, and disclosure}
+
+Denominators shift across items for two distinct reasons, kept separate throughout: structural skips arise
+from branch logic and are reported as their own row in Tables~\ref{tab:context} and \ref{tab:safety}, while
+item nonresponse is the residual. Every figure carries its own base. ``Prefer not to answer'' and ``I'm not
+sure'' were retained as substantive categories in all frequency tables, excluded from ordinal numeric tests
+because they carry no rank position, and treated as item-missing rather than scored as zero in composite
+indices.
+
+Counts are reported exactly throughout, including cells below five. The disclosure protection this study
+relies on is its design rather than cell masking: no direct identifiers were collected, all reporting is
+aggregate, and no free-text response is quoted anywhere. A masking convention would have been cosmetic in
+any case, because every table states the base against which its percentages are computed, from which any
+masked count is recoverable.
+
+Because the platform populated no duplicate-detection metadata and recorded no IP or device information,
+duplicate submissions were screened manually on the respondent-chosen nickname and password; no analytic
+row required exclusion on duplicate grounds, and the two respondents who failed an attention check were
+flagged rather than dropped, per protocol (Supplementary Material \S S7).
+
+\subsection{Statistical approach}
+
+The outcome distribution was strongly ceiling-weighted and several exposures had thin or unbalanced
+categories, so all tests were nonparametric: Mann--Whitney $U$, Kruskal--Wallis $H$, permutation $\chi^2$
+with 10,000 label permutations (seed 20260715) for thin contingency tables, and Fisher's exact test at very
+small $n$. Effect sizes were rank-biserial $r_{rb}$ with the common-language effect size, epsilon-squared
+$\varepsilon^2$, and Cram\'er's $V$ respectively, with Wilson 95\% confidence intervals for prevalences.
+
+The preparation-to-satisfaction comparison was designated in the analysis plan as the primary comparison
+before any test was run, and is reported uncorrected, with a tie-aware permutation test as a robustness
+check because the outcome is heavily tied. The study was not preregistered, and the analysis plan was
+written after data collection. All other bivariate tests were assigned to four prespecified
+families---bivariate, substance-stratified, safety-domain, and legal-knowledge---corrected jointly within
+family by the Benjamini--Hochberg procedure and kept separate because they share neither exposures nor
+outcome domains (Supplementary Tables~S4--S7). One exploratory proportional-odds model was fitted
+(Supplementary Table~S8). Analyses were conducted in Python; the full pipeline is available (see Data
+availability).
+
+\subsection{Protocol deviations}
+
+Three deviations are reported transparently. The protocol's four-arm preparation $\times$ integration
+design is not estimable from the collected data: the instrument contains no clean participant
+integration-received item, and the preparation split is badly unbalanced. Preparation was therefore
+examined against the outcome directly, and no integration measure is reconstructed anywhere in this paper.
+The protocol also specified crossing facilitator training and protocol items against participant-perceived
+safety, and a composite harm-reduction score mixing the two branches; because facilitator self-report
+cannot be linked to the ceremony any particular participant attended, both would have required pairing
+unrelated events. Two participant-answerable proxies were substituted---prior knowledge of the
+facilitator's background and whether screening questions were asked---facilitator self-report is presented
+separately and descriptively, and two branch-specific composites replaced the mixed one. Two skip-logic
+errors in the instrument were also identified (Supplementary Material \S S6).
+
+\section{Results}
+
+\subsection{Respondents}
+
+The analytic sample of 73 adults skewed middle-aged and highly educated (Table~\ref{tab:demo}). Among the
+72 with a valid age, the mean was 42.4 years and the median 41 (SD 11.9, range 21--71, IQR 34--50); 35 of
+the 71 answering the gender item (49\%) identified as women; 56 of the 72 answering the education item
+(78\%) held a bachelor's degree or above; and 44 (61\%) described their economic situation as comfortable
+against 6 (8\%) as difficult. Sixty-eight (94\% of the 72 answering) reported residing in Puerto Rico;
+residency was a descriptive covariate rather than an inclusion filter, and the presence of respondents
+living elsewhere tempers any reading of the sample as describing Puerto Rico specifically. Free-text
+engagement was substantial relative to sample size: 37 open-text fields yielded 285 non-empty answers,
+roughly three-quarters in Spanish. A coding scaffold for the research team's thematic analysis accompanies
+these data (Supplementary Material \S S8); the corpus is not interpreted here.
+
+\subsection{The ceremonial context}
+
+Participants reported extensive but not recent ceremonial histories. Among the 67 answering, the median
+number of lifetime ceremonies attended was 6 (IQR 3--12, range 1--250) against a median of 1 in the past 12
+months (IQR 0--2), and 30 of the 66 answering the recency item (45\%) reported their last ceremony more
+than 12 months earlier.
+
+Across all ceremonies attended, the substances most often reported by the 67 participants answering were
+magic mushrooms (50, 75\%), ayahuasca (43, 64\%), tobacco (38, 57\%), and cacao (23, 34\%), followed by an
+``other'' category (18, 27\%) that only 3 respondents specified in its free-text follow-up, leaving it
+uninterpretable, and then DMT (17, 25\%), LSD (13, 19\%), MDMA (10, 15\%), and ketamine (4, 6\%)
+(Figure~\ref{fig:subs}). For the most recent ceremony, the individually reportable groups were magic
+mushrooms ($n=31$) and ayahuasca ($n=23$), every remaining substance being pooled into a combined group
+($n=11$) under a prespecified rule.
+
+The most recent ceremony was typically a discrete, multi-hour, outdoor event: a single ceremony rather than
+a retreat for 48 of the 65 answering (74\%), a natural setting for 37 of 67 (55\%), and most often either
+4--6 hours or an overnight event of roughly 12 hours or more (Table~\ref{tab:context}).
+
+\subsection{Preparation, screening, and prior knowledge}
+
+Preparation was near-universal among those answering (Table~\ref{tab:safety}): of 67, 55 (82\%) prepared
+and 6 (9\%) sometimes did, against 6 (9\%) reporting none. This imbalance is why the four-arm design was
+abandoned and it constrains every preparation analysis below. Participant-observable facilitator practices
+were common but not uniform: 54 of 67 (81\%) knew about the facilitator's background beforehand, but only
+39 of the 66 answering the screening item (59\%) reported being asked screening questions, against 15
+(23\%) who were not and 7 (11\%) who were unsure. Disclosure outside the ceremonial context was uncommon:
+8 of the 65 answering (12\%) had spoken to a health professional about their participation beforehand.
+
+A participant-side index counting these three practices (range 0--3) was constructed for the 54 with
+complete data on all three: 35 (65\%) reported all three and 16 (30\%) two, and \emph{none} reported zero.
+Internal consistency was low ($\alpha = 0.14$, 95\% CI $-0.36$--0.47), consistent both with the items
+capturing distinct protective practices rather than one latent construct and with their differing
+referents, since preparation is asked as a general practice while the other two ask about the most recent
+ceremony. The score is read as a count of practices present rather than as a validated scale.
+
+\subsection{Experience and perceived safety}
+
+Reported satisfaction was overwhelmingly positive. Of the 72 respondents identifying as participants, 64
+answered the satisfaction item---63 giving a numeric score and 1 declining---while 3 were never routed to
+the participant section and 5 did not respond. The distribution was strongly ceiling-weighted with a median
+of 6 and the mode at the scale maximum (Figure~\ref{fig:good}). Perceived in-ceremony comfort and safety
+was similarly high and undifferentiated, returning a median of 3 in every subgroup tested and differing
+neither by prior knowledge of the facilitator's background nor by whether screening questions were asked.
+Trust in the facilitator was the one participant-side comparison differing at the uncorrected
+level---median 4 (IQR 3--4) among the 54 who knew the facilitator's background beforehand against 3 among
+both smaller groups ($H=8.15$, $p=0.017$, $\varepsilon^2=0.10$)---and did not survive correction
+($q=0.102$). Satisfaction did not differ significantly by most-recent-ceremony substance ($H=4.98$,
+$p=0.083$, $q=0.166$). Full test tables are in Supplementary Tables~S4--S7.
+
+The safety domain produced the sample's most consequential descriptive finding. Of the 67 participants
+answering the lifetime non-consensual contact item, 61 (91\%) reported no such contact, 5 (7\%) reported
+that it occurred, and 1 was unsure; the within-sample proportion was 7.5\% (Wilson 95\% CI 3.2--16.3). The
+parallel most-recent-ceremony item, answered by 65, returned 2 affirmative and 62 negative, with 1
+declining: of the 5 reporting the experience ever, 2 placed it at the most recent ceremony and 3 did not.
+That bears directly on what follows, because the facilitator-practice measures crossed against the lifetime
+item all describe the most recent ceremony, so for those 3 respondents exposure and outcome refer to
+different events. Non-consensual contact was associated with prior knowledge of the facilitator's
+background at the uncorrected level (permutation $\chi^2 = 18.90$, $p=0.047$, $V=0.38$, $n=67$) but not
+with screening (permutation $\chi^2 = 13.64$, $p=0.094$, $V=0.32$, $n=66$); neither survived correction
+(both $q=0.236$), nor did the comparison by substance ($p=0.486$) or by the harm-reduction index
+($p=0.641$). The research team elected to publish these cross-tabulations rather than withhold them:
+withholding would remove the only evidence this study can offer on whether such reports cluster with any
+measured practice, and aggregate reporting of an anonymous survey that collected no identifiers leaves no
+respondent identifiable. Every result here is hypothesis-generating, rests on the referent mismatch just
+described, and is powered neither to confirm nor to rule out an association. One measurement observation
+belongs alongside them: an item on perceived positive life impact had zero variance, all 67 respondents
+answering selecting the same option.
+
+\subsection{Facilitator practice}
+
+Eight respondents identified as facilitators, and 7 of the 8 also identified as participants. Every
+facilitator who answered a substantive facilitator item is one of those 7, so this section and the
+participant results above describe overlapping people rather than independent samples. Cells are small and
+no comparison at this base is meaningful. Of the 7 answering, 6 gave personal experience and self-study as
+their preparation for the role and \emph{none} reported formal certification or academic coursework; on
+emergency planning, 4 described an informal or unwritten approach and 3 said it depends on the situation,
+with none selecting a formal written plan. All 7 answered the crisis-signs item: disorientation, feeling
+overwhelmed, fainting, difficulty breathing, and panic attacks were each reported by 3, and signs of
+self-harm or suicidal thoughts by 2. Full distributions, including screening and distress-response
+practices, and the undefined odds ratios this branch returns, are in Supplementary Tables~S2--S3.
+
+\subsection{Preparation and reported satisfaction}
+
+Among the 63 participants giving a numeric satisfaction score, 58 reported some preparation (median 6, IQR
+5--6) and 5 reported none (median 4, IQR 3--5; Figure~\ref{fig:prep}); a sixth respondent reporting no
+preparation did not answer the outcome, which is why this base is 5 rather than the 6 in
+Table~\ref{tab:safety}. The Mann--Whitney comparison specified in the analysis plan returned $U=218.0$,
+$p=0.041$, $r_{rb}=0.50$, and a common-language effect size of 0.75; a tie-aware permutation test gave
+$p=0.024$. The structural weakness of this comparison precedes its result: the no-preparation group
+contains five respondents. The prespecified three-level sensitivity analysis was non-significant ($H=4.24$,
+$p=0.120$, $q=0.359$), the practice index was unassociated with satisfaction ($H=2.09$, $p=0.352$,
+$q=0.422$), and an exploratory proportional-odds model adjusting for age and facilitator trust placed
+preparation short of conventional significance (OR 5.21, 95\% CI 0.84--32.41, $p=0.077$) while trust
+reached it (OR 2.20, 95\% CI 1.06--4.53, $p=0.033$), at roughly 12 cases per estimated parameter
+(Supplementary Table~S8). No test in any corrected family was significant at $q<0.05$.
+
+\section{Discussion}
+
+\subsection{A structurally informal practice landscape}
+
+The most stable picture this sample supports is a practice organized around informal, relationally
+transmitted expertise rather than credentialed or documented protocol. Among the facilitators who
+self-reported, training came from personal experience, self-study, mentorship, and family tradition; none
+reported formal certification or academic coursework, and emergency planning was uniformly informal or
+conditional. This sits at some distance from the structured preparation, screening, and difficult-experience
+protocols that harm-reduction frameworks for psychedelic settings assume
+\citep{gorman2021psychedelic,pilecki2021ethical,dutton2025harm}, is consistent with survey evidence that
+people who use psychedelics support clearer practice standards \citep{kruger2023preferences}, and is a
+reminder that in community settings the containing structure is the setting itself rather than a protocol
+\citep{hartogsohn2017constructing}.
+
+On the participant side the informality reads differently. Preparation was near-universal among those
+answering, but roughly a quarter reported that no screening questions were asked and a further group was
+uncertain. The asymmetry is worth separating: preparation is something participants largely do, whether
+self-directed or instructed, whereas screening must be done \emph{to} them, and was substantially less
+consistent here. If that asymmetry holds in a larger sample it would locate the intervention target on the
+facilitator side---but this sample cannot establish whether it holds, and eight facilitators cannot
+characterize screening practice.
+
+The demographic profile---middle-aged, university-educated, economically comfortable---resembles that of
+ceremony-attender cohorts described elsewhere, though at the older and more educated end of them. Its mean
+age of 42.4 years and 78\% holding a bachelor's degree or above compare with 37.6 years and 49\%
+degree-holding among United States neo-shamanic ayahuasca ceremony attenders \citep{pagni2025longterm},
+37.0 years among ceremonial ayahuasca retreat attenders in the Peruvian Amazon
+\citep{ruffell2021ceremonial}, and 40 years with 59\% degree-holding in a large international naturalistic
+psilocybin cohort \citep{nayak2023naturalistic}; the 49\% here identifying as women falls inside the
+44--61\% those three report, as it does for international psychedelic-survey samples
+\citep{kopra2023investigation,robinson2026field} and this team's psilocybin-specific Puerto Rico survey
+\citep{velezrodriguez2026psilocybin}. That convergence is best read as evidence about who responds to online
+psychedelic surveys, not about who attends ceremonies \citep{bethlehem2010selection}.
+
+\subsection{A ceiling that limits what satisfaction can reveal}
+
+Reported satisfaction clustered at the top of its scale, and a perceived-life-impact item had no variance
+at all. This is a substantive finding---these respondents overwhelmingly described their most recent
+ceremony positively, consistent with naturalistic cohorts reporting predominantly positive appraisals
+\citep{nayak2023naturalistic,ruffell2021ceremonial}---but it also constrains the analysis severely. An
+outcome with almost no variance in the lower range cannot discriminate between groups, and the null results
+across the corrected families are consistent with that constraint rather than with the absence of any
+association. Ceiling behavior is a known property of self-report scales for hallucinogen experience rather
+than a peculiarity of this instrument \citep{bouso2016measuring}. Satisfaction, measured this way, is close
+to exhausted as an outcome here; future work needs measures with headroom in both directions before group
+comparisons on experience quality can be informative.
+
+\subsection{Safety signals the design can identify but not quantify}
+
+Five of 67 participants answering reported non-consensual physical contact at some point, two of them at
+their most recent ceremony, and facilitators reported having witnessed crisis signs at a base of seven at
+which no rate is estimable. These come from different reporters---none of the five reporting
+non-consensual contact is a facilitator---and cannot be combined. That such reports appear at all is
+consistent with survey-based evidence on boundary violations in naturalistic psychedelic settings
+\citep{kruger2025psychedelic,mcnamee2023studying} and with the community harm-reduction literature that
+developed in response \citep{peluso2020reflections}, and the crisis signs described are of a kind
+documented at non-trivial rates in large naturalistic samples
+\citep{carbonaro2016survey,bouso2022adverse}. The item used here was deliberately broad, covering
+unexpected touch and uncertain or unremembered consent, so the figure should not be read against a narrower
+legal or clinical standard.
+
+The study establishes that these events occur among respondents and that an instrument of this kind can
+capture them; it cannot establish how often they occur, in whom, or under what conditions. The
+cross-tabulations against participant-side proxies pair a lifetime outcome with single-ceremony exposures,
+are powered neither to confirm nor to rule out an association, and did not survive correction, so treating
+any of them as an actionable signal would overstate them considerably. The safety domain justified its
+inclusion by identifying a measurement priority, not by producing an estimate.
+
+\subsection{The preparation finding as a design lesson}
+
+The preparation-to-satisfaction comparison is this study's pre-specified comparison and its most fragile
+result, and those two facts should be held together rather than traded off. The direction was positive and
+the effect sizes were not small, but the no-preparation group contained five respondents answering the
+outcome, the three-level sensitivity analysis was non-significant, and the adjusted model placed
+preparation short of significance with a confidence interval spanning nearly two orders of magnitude.
+Nothing here establishes the finding.
+
+The durable contribution is diagnostic: the preparation split was unbalanced enough to dissolve the
+original four-arm design and remains the binding constraint on the primary analysis, so any successor study
+will need either a sampling strategy that reaches unprepared participants in usable numbers or a question
+that does not depend on that contrast. Reporting the deviation rather than absorbing it quietly is what
+makes the constraint visible to the next design.
+
+\subsection{Limitations}
+
+The sample was non-probability, unweighted, and self-selected into an online survey; the concentration in
+higher education categories and favorable economic self-ratings describe who responded, not who
+participates, and nothing here supports a statement about how common ceremonial entheogen use is in Puerto
+Rico. Roughly 6\% of those answering the residency item lived outside Puerto Rico, further tempering any
+Puerto Rico--specific reading, and the eligibility criteria were self-assessed rather than enforced.
+
+Role subsamples were small and unevenly sized, and the facilitator branch of eight supports no rate and no
+association test. Because 7 of those 8 also answered as participants, the facilitator-side and
+participant-side statistics are not independent samples and should not be read as two separate groups. The
+reports are nonetheless unlinked at the ceremony level, which is not a minor inconvenience: it eliminated
+the protocol's integration-proxy comparison, its perceived-safety-by-training analysis, and its mixed
+harm-reduction composite, and no statement in this paper connects what facilitators reported doing to what
+participants reported experiencing.
+
+Two referent mismatches limit the associations reported here: the safety cross-tabulations pair a lifetime
+outcome with most-recent-ceremony exposures, and the primary comparison pairs a most-recent-ceremony
+outcome with a general-practice exposure. All measures were single-timepoint self-report, and for most
+respondents the most recent ceremony was distant---30 of 66 answering reported more than 12 months---so
+recall error is plausible and unmeasurable. The instrument contains no integration measure, is unvalidated,
+and produced mixed first reliability evidence (Supplementary Table~S9) alongside two documented skip-logic
+errors (Supplementary Material \S S6).
+
+\subsection{Conclusion}
+
+Within a self-selected sample of 73 adults, ceremonial entheogen use in Puerto Rico was described by a
+middle-aged, university-educated, overwhelmingly Puerto Rico--resident group whose most recent ceremonies
+were typically single, multi-hour, outdoor events involving psilocybin mushrooms or ayahuasca, described in
+strongly positive terms. Preparation was near-universal while pre-ceremony screening was not, and the small
+facilitator subsample described training and emergency planning as informal rather than credentialed. Five
+of 67 participants answering reported non-consensual physical contact, and facilitators reported witnessing
+crisis events at a base too small for any rate to be estimated. These findings describe this sample alone,
+support no estimate of prevalence and no inference about what any practice produces, and take their
+principal value from identifying which measures, sampling strategies, and instrument corrections a properly
+powered successor study would require.
+
+\section*{Author contributions}
+% UNCONFIRMED — drafted from the roles described in the study protocol. Requires author sign-off.
+YOOO conceived the study, led protocol development and ethics submission, and supervised the project.
+YOOO, JCVR, JMHT, JMT, PRF, CR, ANGR, and AIRM contributed to instrument development and review. JCVR led
+data curation, formal analysis, and manuscript drafting. JMHT contributed to methodology and analysis
+review. JMT, PRF, and CR contributed to interpretation and clinical/community context. ANGR and AIRM
+contributed to recruitment and data collection. All authors reviewed and approved the final manuscript.
+
+\section*{Funding}
+% Confirmed by the corresponding author, 2026-08-13: the study was unfunded.
+This research received no specific grant from any funding agency in the public, commercial, or
+not-for-profit sectors.
+
+\section*{Competing interests}
+% Author decision, 2026-08-13: disclose the organizational affiliations rather than declare none.
+% Still requires a per-author disclosure before submission — UNCONFIRMED at the individual level.
+Several authors are affiliated with organizations that conduct, advocate for, or provide services related
+to psychedelic and entheogen research and practice, including the Puerto Rico Institute for Psychedelic
+Science, Medicine \& Awareness and the Colectivo Psicod\'elico de Puerto Rico. These affiliations are
+disclosed as potential non-financial competing interests. No author received financial support from, or
+holds a financial interest in, any commercial entity with an interest in the subject matter of this
+article.
+
+\section*{Data availability}
+% Author decision, 2026-08-13: commit to a public repository deposit rather than release on request.
+The de-identified survey data and the complete analysis code that generates every result reported here will
+be deposited in a public repository on publication, and the digital object identifier will be recorded
+here. The data contain no direct identifiers by design. Until deposit, both are available from the
+corresponding author.
+
+\section*{Generative AI use declaration}
+% UNCONFIRMED — verify scope before submission.
+Large language model tooling (Anthropic Claude) was used to assist with statistical analysis code
+development and with drafting and editing of this manuscript. All analyses were specified by the authors,
+all outputs were verified against the source data by the authors, and the authors take full responsibility
+for the content of this article.
+
+\bibliography{../references/references}
+
+\clearpage
+
+\section*{Tables and Figures}
+
+\begin{table}[htbp]
+\centering
+\caption{Sociodemographic characteristics of the analytic sample ($N=73$). Bases differ by item and are
+stated with each; counts are exact and percentages are of respondents answering.}
+\label{tab:demo}
+\setstretch{1.1}
+\begin{tabular}{p{3.6cm}p{6.4cm}rr}
+\toprule
+Characteristic & Category & $n$ & \% answering \\
+\midrule
+Age, years ($n=72$) & Mean 42.4 (SD 11.9); median 41 (IQR 34--50); range 21--71 & & \\
+\addlinespace
+Gender ($n=71$)     & Woman & 35 & 49 \\
+                    & Man & 30 & 42 \\
+                    & Non-binary & 4 & 6 \\
+                    & Prefer not to answer & 2 & 3 \\
+\addlinespace
+Education ($n=72$)  & Bachelor's degree & 34 & 47 \\
+                    & Master's degree & 19 & 26 \\
+                    & Associate's degree & 7 & 10 \\
+                    & High school diploma / GED & 6 & 8 \\
+                    & Doctorate & 3 & 4 \\
+                    & Prefer not to answer & 3 & 4 \\
+\addlinespace
+Economic situation ($n=72$) & Comfortable & 44 & 61 \\
+                    & Tight & 20 & 28 \\
+                    & Difficult & 6 & 8 \\
+                    & Prefer not to answer & 2 & 3 \\
+\addlinespace
+Country of residence ($n=72$) & Puerto Rico & 68 & 94 \\
+                    & United States & 3 & 4 \\
+                    & Spain & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Most-recent-ceremony context, participant-reported. Participant branch only: 72 respondents
+identified as participants, of whom 3 were not routed to these items by the continuation gate described in
+Methods and appear as structural skips. Item nonresponse is the residual between the per-item base and 69.
+Counts are exact; percentages are of respondents answering the item.}
+\label{tab:context}
+\setstretch{1.0}
+\begin{tabular}{p{4.2cm}p{5.8cm}rr}
+\toprule
+Item & Category & $n$ & \% answering \\
+\midrule
+Time since last ceremony & More than 12 months ago & 30 & 45 \\
+($n=66$ answering)                & 2 to 6 months ago & 20 & 30 \\
+                                  & 7 to 12 months ago & 11 & 17 \\
+                                  & During the past month & 4 & 6 \\
+                                  & Prefer not to answer & 1 & 2 \\
+                                  & \emph{Structural skip (not routed)} & 3 & --- \\
+                                  & \emph{Item nonresponse} & 3 & --- \\
+\addlinespace
+Place ($n=67$ answering)   & Natural setting (forest, beach, mountain) & 37 & 55 \\
+                 & Private home & 15 & 22 \\
+                 & Retreat center or wellness facility & 9 & 13 \\
+                 & Other & 3 & 4 \\
+                 & Urban or residential space used informally & 2 & 3 \\
+                 & Prefer not to answer & 1 & 1 \\
+                 & \emph{Structural skip (not routed)} & 3 & --- \\
+                 & \emph{Item nonresponse} & 2 & --- \\
+\addlinespace
+Format ($n=65$ answering)  & Single ceremony & 48 & 74 \\
+                 & Retreat or series of ceremonies & 13 & 20 \\
+                 & Prefer not to answer & 3 & 5 \\
+                 & Not sure & 1 & 2 \\
+                 & \emph{Structural skip (not routed)} & 3 & --- \\
+                 & \emph{Item nonresponse} & 4 & --- \\
+\addlinespace
+Duration ($n=65$ answering) & 4 to 6 hours & 19 & 29 \\
+                 & Overnight ($\sim$12+ hours) & 19 & 29 \\
+                 & 7 to 12 hours & 14 & 22 \\
+                 & 1 to 3 hours & 7 & 11 \\
+                 & 2 to 3 days & 4 & 6 \\
+                 & 4 to 6 days & 1 & 2 \\
+                 & Less than 1 hour & 1 & 2 \\
+                 & \emph{Structural skip (not routed)} & 3 & --- \\
+                 & \emph{Item nonresponse} & 4 & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\setstretch{1.1}
+\begin{longtable}{p{5.2cm}p{4.8cm}rr}
+\caption{Participant-reported protective practices and safety outcomes. Bases are per item and differ
+because each is asked under its own skip condition; the 3 structural skips are the dual-role respondents
+not routed to the participant section. Counts are exact throughout. The two non-consensual contact items
+differ in referent: the first asks about any ceremony ever, the second about the most recent ceremony only.}
+\label{tab:safety} \\
+\toprule
+Item & Category & $n$ & \% answering \\
+\midrule
+\endfirsthead
+\toprule
+Item & Category & $n$ & \% answering \\
+\midrule
+\endhead
+Self-directed preparation ($n=67$) & Yes & 55 & 82 \\
+                & Sometimes & 6 & 9 \\
+                & No & 6 & 9 \\
+                & \emph{Structural skip / item nonresponse} & 3 / 2 & --- \\
+\addlinespace
+Knew facilitator's background ($n=67$) & Yes & 54 & 81 \\
+                & A little & 8 & 12 \\
+                & No & 4 & 6 \\
+                & Prefer not to answer & 1 & 1 \\
+                & \emph{Structural skip / item nonresponse} & 3 / 2 & --- \\
+\addlinespace
+Facilitator asked screening questions ($n=66$) & Yes & 39 & 59 \\
+                & No & 15 & 23 \\
+                & Not sure & 7 & 11 \\
+                & Prefer not to answer & 5 & 8 \\
+                & \emph{Structural skip / item nonresponse} & 3 / 3 & --- \\
+\addlinespace
+Spoke to a health professional beforehand ($n=65$) & No & 54 & 83 \\
+                & Yes & 8 & 12 \\
+                & Prefer not to answer & 2 & 3 \\
+                & Not sure & 1 & 2 \\
+                & \emph{Structural skip / item nonresponse} & 3 / 4 & --- \\
+\addlinespace
+Non-consensual physical contact, ever ($n=67$) & No & 61 & 91 \\
+                & Yes & 5 & 7 \\
+                & Not sure & 1 & 1 \\
+                & \emph{Structural skip / item nonresponse} & 3 / 2 & --- \\
+\addlinespace
+Non-consensual physical contact, most recent ceremony ($n=65$) & No & 62 & 95 \\
+                & Yes & 2 & 3 \\
+                & Prefer not to answer & 1 & 2 \\
+                & \emph{Structural skip / item nonresponse} & 3 / 4 & --- \\
+\addlinespace
+Harm-reduction practice index ($n=54$ complete cases) & All three practices & 35 & 65 \\
+                & Two practices & 16 & 30 \\
+                & One practice & 3 & 6 \\
+                & No practices & 0 & 0 \\
+\bottomrule
+\end{longtable}
+\setstretch{1.0}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.94\textwidth]{../figures/fig1_flow.png}
+\caption{Sample construction and role structure. Of 100 submissions, 13 were abandoned before the role
+fork and 14 of the remaining 87 screened out by answering ``no'' to both role items, leaving an analytic
+sample of $N=73$. Roles are not mutually exclusive: the 7 dual-role respondents enter both branches, giving
+72 participant-side and 8 facilitator-side reports, and 3 of those 7 were stopped by the participant
+continuation gate, so 69 respondents were actually routed to the participant items. The branches are
+unlinked at the ceremony level --- no identifier connects a participant to the facilitator who ran their
+ceremony, and the ceremonies a dual-role respondent led are different events from those they attended ---
+so no participant--facilitator comparison is possible.}
+\label{fig:flow}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{../figures/fig2_substances.png}
+\caption{Substances used across all ceremonies attended, participant-reported (select-multiple; base $n=67$
+participants answering). Bars are labeled with the count and the percentage of that base; because
+respondents could select more than one substance, percentages need not sum to 100\%. The ``other'' bar is
+drawn in grey because its free-text follow-up was completed by only 3 respondents, leaving the category
+uninterpretable. Distinct from the facilitator-led substance variable and from the most-recent-ceremony
+substance variable.}
+\label{fig:subs}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{../figures/fig3_ceremony_good.png}
+\caption{Distribution of reported satisfaction with the most recent ceremony (0 = very unpleasant to 6 =
+very pleasant). Of the 72 respondents identifying as participants, 63 gave a numeric score and form the
+base; the remaining 9 comprise 1 ``prefer not to answer'', 3 structural skips at the continuation gate, and
+5 item nonresponses. Median 6, with 51 of 63 (81\%) answering 5 or 6 --- the ceiling that limits how much
+variance any predictor can explain.}
+\label{fig:good}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{../figures/fig4_prep_outcome.png}
+\caption{Reported satisfaction by self-directed preparation status. Any preparation, $n=58$ answering the
+outcome (median 6, IQR 5--6); no preparation, $n=5$ (median 4, IQR 3--5). Marker area is proportional to the
+number of respondents giving each score, since scores tie heavily at the ceiling. The no-preparation group
+is drawn as its five raw points and a median tick rather than a box, which at that $n$ would imply
+distributional precision the data cannot support. \textbf{Exploratory:} this comparison is suggestive, not
+confirmatory.}
+\label{fig:prep}
+\end{figure}
+
+\end{document}
