@@ -48,12 +48,12 @@ print(len(text[start:end].split()))  # -> 4674
 | Requirement | Value | Confidence |
 |---|---|---|
 | Article type | Original Research | — |
-| Word limit (Intro–Methods–Results–Discussion) | **4,000 words** | Verbatim |
+| Word limit (Intro–Methods–Results–Discussion) | **4,000 words.** Verbatim: "A typical paper for this journal should be no more than 4,000 words for Original Research (Introduction, Methods, Results, Discussion)". The page does **not** state what the count includes or excludes — treating tables and figures as outside it is an inference from the parenthetical, not a stated rule. Note also "should be", not "must be". | Verbatim; exclusion is inferred |
 | Abstract | **Unstructured, ≤200 words** | Verbatim |
 | Reference style | **Chicago Manual of Style, Author-Date** (`tf_uschicagob.pdf`) — not APA, not Vancouver | Verbatim |
 | Keywords | 4–6 | Summarized |
 | Figures | 1200 dpi line art / 600 dpi grayscale / 300 dpi color; PS, JPEG, TIFF, or Word | Summarized |
-| Figure/table count limit | Not stated | — |
+| Figure/table count limit | **None.** Re-verified 2026-08-25 against the live instructions page; no maximum count and no page-extent limit appears anywhere. Published JPD papers typically carry 4–5 display items (see `sources/search_20260825_jpd_figure_table_limits.md`) — the current draft's 9 is unusual but not non-compliant. | Verified (negative) |
 | Tables | Must add new information, not duplicate text; editable, independently interpretable | Summarized |
 | Page formatting | Double-spaced, 1-inch margins, numbered pages, 12pt Times New Roman or similar, American spelling | Summarized |
 | Reporting guideline (STROBE etc.) | **Not mandated.** Keep the STROBE checklist as supplement anyway — reviewer-facing best practice for a cross-sectional survey, per plan Phase 3 | Summarized |

@@ -223,3 +223,125 @@ author's explicit instruction to leave those flagged as before. Additionally:
    every author name directly against CrossRef, not just the title/DOI/journal — that check is what caught
    these, and a lighter check (title/DOI only, which is what round 1's Pass 3a and this round's first
    background-agent pass both did) would have missed most of them.
+
+---
+
+# Phase 5, round 3 (2026-08-25) — v5 human review → v6
+
+Input was `v5_draft_human_reviewed.md`, Julián and Jean's manual revision of v4 (new author order and
+affiliations, rewritten Introduction, restructured Methods, ~300 fewer words). This round applied their four
+outstanding comments to it. Full disposition in `manuscript/PEER_REVIEW_R3.md`; only the mechanics are here.
+
+**Applied.** (1) Scattered limitation caveats consolidated into Limitations at the moderate setting the
+author chose — seven passages trimmed in Methods, Results, and Discussion, Limitations expanded to absorb
+them; the ceiling discussion deliberately left in Discussion because it explains the corrected-family nulls.
+(3) KoboToolbox cited at first mention; new `kobotoolbox2026` `@misc` entry using the vendor's own
+recommended citation form. (4) New `analysis/missingness.py` produces a four-state per-item decomposition
+(`outputs/tables/missingness_by_item.csv` → Supplementary Table S10); the Methods data-quality subsection
+grew from one sentence to two self-contained paragraphs, and supplement §S7 was retitled and expanded.
+
+**Not applied.** (2) The "non-prep group only answered 6 or NaN" comment does not reproduce. `prep_part='no'`
+has six respondents scoring 0, NaN, 5, 3, 6, 4 — the manuscript, Table 3, and Figure 4 are all correct. Every
+categorical column was scanned for a "no"-type group confined to `_6`/NaN; no preparation variable matches.
+Left unchanged, documented rather than silently ignored.
+
+**Errors found while doing the above, all corrected.**
+- The participant-routed base is **67, not 69**; structural skips are **5, not 3**. The XLSForm relevance is
+  `(is_participant='si' and pause_facil='si' and is_facilitator='si') or (is_participant='si' and
+  is_facilitator='no')`, and 2 participants answered `pna` to the facilitator role item, matching neither arm
+  (rows 70 and 73 — every participant item blank). Drafts since v3 counted only the 3 continuation-gate
+  refusals. Per-item bases and every statistic are unaffected; the skip/nonresponse attribution shifts by 2 on
+  each participant item. Fixed in Tables 2–3, Figure 1 and 3 captions, the supplement preamble, and in
+  `make_figures.py` itself, which gained a `participant_routed()` helper replacing the `pause_facil == 'no'`
+  shortcut Figures 1 and 3 both used. Both PNGs regenerated.
+- v5's Table 1 age row was computed over all 96 age-answering submissions while labelled `n=72`, and
+  contradicted the Abstract. Restored to the analytic-sample values (mean 42.4, SD 11.9, IQR 34.0–50.0,
+  range 21–71).
+- Two dangling cross-references in v5: the practice-index rows were missing from Table 3 though the Results
+  text cites them (restored), and Golden et al. 2022 was left in the reference list with no remaining citation
+  (removed — flagged in case the intent was to keep the citation).
+
+**Conversion artifacts repaired.** The `.docx` → `.md` round trip dropped χ², ε², *r*ᵣᵇ, α, the × in
+"preparation × integration", and the minus sign on the α CI lower bound (−0.36, which had become 0.36 — a CI
+that crosses zero rendered as one that doesn't). All restored.
+
+**Build.** `v6_draft.tex` → 28 pages, `pdflatex` ×3 + `bibtex`, zero errors, zero undefined citations or
+references, zero overfull hboxes; the 7 BibTeX warnings are the expected Online-First entries. `supplement.tex`
+→ 11 pages, one pre-existing 1.98pt overfull hbox in the S5 table. IMRaD word count **3,451** (cap 4,000),
+down from v4's 3,768. A `\texttt` introduced in the supplement this round hit a missing Courier TFM and was
+replaced with `\emph` — this build has no Courier dependency anywhere, same as the `\urlstyle{same}` choice
+in the main preamble.
+
+## Follow-up to round 3: practice index removed (2026-08-25)
+
+Author instruction after the round-3 pass: remove all harm-reduction practice-index references. This
+reverses round 3's E3 restoration of the Table 3 index rows and goes further.
+
+**Manuscript.** Results index paragraph deleted; its one non-statistical finding kept, restated
+without index language, on the preceding paragraph ("Among the 54 respondents who answered all three
+of preparation, prior knowledge of the facilitator's background, and screening, every one reported at
+least one of them"). Protocol deviations reworded — "two branch-specific composites replace the mixed
+one" was false on the participant side once the index went, now "a facilitator-side readiness
+composite replaces the mixed one" (that composite, supplement Table S3, is a separate measure and
+survives). Limitations lost the practice-index sentence, and "mixed first reliability evidence"
+became "only preliminary two-item reliability evidence" — "mixed" was carried by the α = 0.14 index
+row, and Table S9 now holds only α = 0.58 and α = 0.86. Table 3 lost its four index rows.
+
+**Supplement.** Index rows dropped from Table S4 (bivariate) and Table S6 (safety-domain); Table S9
+lost its index row and its caption narrowed; §S5's paragraph explaining the low α removed.
+
+**BH families re-corrected** (author's choice: drop and re-correct rather than leave the withdrawn
+tests in the family). Recomputed with `analysis/stats_helpers.bh_fdr`; no q crosses 0.05 either way,
+so no conclusion changes.
+
+- bivariate, 6 → 5 tests: prep 3-level 0.359→0.300, comfort by background 0.422→0.407, comfort by
+  screening 0.422→0.407, **trust by background 0.102→0.085**, trust by screening 0.679 unchanged.
+- safety-domain, 5 → 4 tests: **both non-consensual contact rows 0.236→0.188**, crisis × protocol
+  0.238→0.191, crisis × emergency plan 0.536→0.429.
+
+The two bolded values are quoted in the main text and were updated there.
+
+**Kept deliberately.** Limitations still records that the ceremony-level unlinking "eliminated … its
+mixed harm-reduction composite" — that names the *protocol's* planned composite and documents why it
+could not be built, which is a protocol-deviation statement rather than a reference to the index that
+was constructed.
+
+**Build.** `v6_draft.tex` → 28 pages, 0 undefined citations or references, 0 overfull hboxes.
+`supplement.tex` → 10 pages (was 11), 0 errors, 0 overfull hboxes — the pre-existing 1.98pt overfull
+was in the S9 row that came out. Full-text scan of both PDFs finds no residual index text. IMRaD word
+count **3,394** (was 3,451; cap 4,000).
+
+## Follow-up to round 3: supplementary material eliminated (2026-08-25)
+
+Author instruction: fold the worthwhile supplement content into the manuscript, drop the rest. The
+manuscript now ships with no supplementary material; `supplement.tex` carries a RETIRED banner and
+remains in the repo as the analysis record only. Item-by-item disposition in `../PEER_REVIEW_R3.md`.
+
+Folded in: Table S1 verbatim item wording (now Table 1), Table S10 missing-data decomposition (now
+Table 2), §S6 skip-logic errors (Limitations, both described in full), Tables S2–S3 facilitator
+practice (dropped as tables, Results §3.5 expanded to carry the distributions), §S5 reliability (both
+α values inline in Limitations), §S9 reproducibility (Data availability).
+
+Dropped: Tables S4–S7 BH families (tables and pointers only — the BH procedure and all four reported
+q-values stay in the text, per author decision), §S1 coding notes, the preamble conventions, §S4
+proportional-odds model, §S8 qualitative scaffold (held for a separate manuscript). The STROBE
+checklist file is not submitted; Methods still states that reporting follows STROBE.
+
+Tables renumbered by order of first mention, which shifted all three existing tables: instrument
+wording (1) and missing data (2) are cited from Methods, so sociodemographics → 3, ceremony context →
+4, protective practices → 5. Both the `.tex` and the `.md` updated; the markdown keeps its Google-Docs
+bookmark anchors bound to the tables they always pointed at and changes only the displayed number.
+
+Two layout fixes this forced. The protective-practices table is a `longtable` and therefore does not
+float, so it typeset as Table 5 on p22 while the deferred float tables landed on pp24–27 — right
+numbering, wrong order. Display items are now one per page via explicit `\clearpage`, which is the
+conventional submission layout regardless. Table 1's long caption also collided with the table's top
+rule and needed explicit spacing.
+
+Build: 32 pages, 0 undefined citations or references, 0 overfull hboxes. IMRaD word count **3,778**
+of 4,000 (was 3,394). Display items: 5 tables + 4 figures.
+
+Open: the 4,000-word cap is read as excluding table content ("Introduction–Methods–Results–Discussion
+combined", verbatim from the JPD guidelines). If that reading is wrong the plan breaks and Tables 1–2
+go back out first. Also still open after three flags — the cell-suppression justification v5 removed,
+against analysis-plan decision E10 and captions that all say "counts are exact".

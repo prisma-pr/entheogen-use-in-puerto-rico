@@ -1,0 +1,24 @@
+item,variable,branch,n_routed,substantive,pna_notsure,item_nonresponse,structural_skip,pct_nonresponse_of_routed
+Age,age,socio,73,72,0,1,0,1.4
+Gender,gender_idt,socio,73,71,0,2,0,2.7
+Education,academic,socio,73,72,0,1,0,1.4
+Economic situation,econ,socio,73,70,2,1,0,1.4
+Country of residence,country,socio,73,72,0,1,0,1.4
+"Substances, all ceremonies attended",drug_used_part,participant,67,67,0,0,6,0.0
+"Substance, most recent ceremony",drugs_used_part,participant,67,65,1,1,6,1.5
+Time since last ceremony,last_ceremony_time,participant,67,65,1,1,6,1.5
+"Place, most recent ceremony",last_ceremony_place,participant,67,66,1,0,6,0.0
+"Format, most recent ceremony",ceremony_format,participant,67,62,3,2,6,3.0
+"Duration, most recent ceremony",ceremony_duration,participant,67,65,0,2,6,3.0
+Self-directed preparation,prep_part,participant,67,67,0,0,6,0.0
+Knew facilitator's background,facil_background,participant,67,66,1,0,6,0.0
+Facilitator asked screening questions,screening_quest,participant,67,54,12,1,6,1.5
+Spoke to a health professional beforehand,med_couns_part,participant,67,62,3,2,6,3.0
+"Satisfaction, most recent ceremony",ceremony_good,participant,67,63,1,3,6,4.5
+Trust in facilitator,trust_level,participant,67,65,2,0,6,0.0
+In-ceremony comfort and safety,comfort_safe,participant,67,65,1,1,6,1.5
+"Non-consensual contact, ever",non_con_contact,participant,67,66,1,0,6,0.0
+"Non-consensual contact, most recent",non_con_contact_recent,participant,67,64,1,2,6,3.0
+Facilitator training background,training_facilitator,facilitator,8,7,0,1,65,12.5
+Emergency plan,emergency_plan,facilitator,8,7,0,1,65,12.5
+Crisis signs witnessed,exp_crisis,facilitator,8,6,1,1,65,12.5

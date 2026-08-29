@@ -78,6 +78,22 @@ def _save(fig, name):
     return p
 
 
+def participant_routed(rows):
+    """Boolean mask: was this respondent actually shown the participant items?
+
+    Transcribed from the `Secci_n_4_Participantes` group relevance in
+    data/koboxls.xlsx:
+      (is_participant='si' and pause_facil='si' and is_facilitator='si')
+      or (is_participant='si' and is_facilitator='no')
+    A participant who answered 'pna' to the facilitator role item matches
+    neither arm and was never routed -- confirmed by every participant item
+    being blank for those rows.
+    """
+    return ((rows["is_participant"].eq("si") & rows["is_facilitator"].eq("no"))
+            | (rows["is_participant"].eq("si") & rows["is_facilitator"].eq("si")
+               & rows["pause_facil"].eq("si")))
+
+
 # ── Figure 1: sample construction and role structure ─────────────────────────
 
 def _box(ax, cx, cy, w, h, text, *, fill="white", edge=PALETTE["blue_main"],
@@ -119,7 +135,10 @@ def fig_flow(df):
     # participant base is smaller than the self-identified one.
     dual_rows = ana[ana.role == "dual"]
     n_dual_stop = int(dual_rows["pause_facil"].eq("no").sum())
-    n_part_routed = n_part_branch - n_dual_stop
+    n_part_routed = int(participant_routed(ana).sum())
+    # the remaining structural skips are participants who answered 'pna' to the
+    # facilitator role item and so matched neither arm of the relevance test
+    n_pna_role = n_part_branch - n_part_routed - n_dual_stop
 
     fig, ax = plt.subplots(figsize=(7.2, 8.0))
     ax.set_xlim(0, 100)
@@ -190,7 +209,8 @@ def fig_flow(df):
     # a participant item (structural skip, not item nonresponse)
     ax.text(part_cx, y_br - brh / 2 - 3.2,
             f"{n_dual_stop} of the {n_dual} dual-role respondents answered “no” at the "
-            f"participant\ncontinuation gate and were shown no participant item "
+            f"participant continuation gate, and\n{n_pna_role} answered “prefer not to answer” "
+            f"to the facilitator role item; neither group was shown\na participant item "
             f"(structural skip).",
             ha="center", va="center", fontsize=7.4, fontstyle="italic",
             color=PALETTE["neutral_dark"], linespacing=1.5)
@@ -276,7 +296,7 @@ def fig_ceremony_good(pp):
     # The 9-person remainder is three separate categories, not one (P3-1):
     n_self = len(pp)
     n_pna = int(pp["ceremony_good"].eq("pna").sum())
-    n_struct = int(pp["pause_facil"].eq("no").sum())
+    n_struct = int((~participant_routed(pp)).sum())
     n_item = n_self - n - n_pna - n_struct
 
     fig, ax = plt.subplots(figsize=(6.2, 3.8))
