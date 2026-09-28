@@ -1,0 +1,208 @@
+% supplement_submission.tex — CANDIDATE trimmed supplement, built for the author's sign-off.
+%
+% Not part of the submission package by default. manuscript/final/supplement_audit.md explains why:
+% the author's 2026-08-25 decision was to eliminate supplementary material entirely, and this file
+% proposes reversing that decision for exactly three blocks judged reviewer-useful (see the audit),
+% which is a recommendation, not something applied unilaterally.
+%
+% Content: extracted verbatim from manuscript/drafts/supplement.tex (untouched, still in the repo as
+% the analysis record) — the four Benjamini-Hochberg correction family tables, the exploratory
+% proportional-odds model, and the full psychometric reliability table. Everything else in the
+% original supplement (instrument wording, facilitator-practice tables, skip-logic prose, missingness
+% table, qualitative scaffold, reproducibility statement) is fully superseded by v7_draft.tex content
+% or was dropped by the author for a substantive (non-space) reason — see supplement_audit.md.
+%
+% If the author approves shipping this: relabel to S1-S6, cite it from v7's Methods §2.6 (Statistical
+% approach) and Limitations, and submit alongside the main PDF as JPD's supplementary-material item
+% (JPD publishes supplementary material via Figshare; text tables are not explicitly excluded by the
+% live instructions page). None of that citation work is done here since the file is not yet approved.
+
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{array}
+\emergencystretch=3em
+
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thesection}{S\arabic{section}}
+
+\title{Supplementary Material\\
+\large Ceremonial Entheogen Use in Puerto Rico: A Descriptive Survey of Participants and a Small
+Facilitator Subsample}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent
+All results below derive from the same analytic sample
+described in the main text ($N=73$; participant branch $n=67$ routed; facilitator branch $n=8$, 7
+dual-role). Structural-skip and ``prefer not to answer'' conventions follow the main text's Methods
+and are applied uniformly. Counts are exact throughout, including cells below five. The bias-corrected
+$\varepsilon^2$ formula can return small negative values when an effect is indistinguishable from
+zero; these are displayed truncated to 0.00 and marked $\dagger$, applied uniformly.
+
+\section{Multiplicity correction: all four test families}
+
+The preparation-to-satisfaction comparison, designated in the analysis plan as the primary comparison
+before any test was run, is reported uncorrected in the main text and is excluded from every family below.
+The study was not preregistered. All other bivariate tests were assigned in advance to one of four
+thematically organized families and corrected jointly within family by the Benjamini--Hochberg
+false-discovery-rate procedure. Two variables, non-consensual contact and screening received, recur as
+predictor or outcome across three of the four families (see the safety-domain and legal-knowledge families
+below), so family-wise correction does not bound the error rate for conclusions about either variable across
+every test in which it appears; no q-value in any family is below 0.05, so this does not change any result.
+\textbf{No test in any family was significant at $q<0.05$.}
+
+\begin{table}[htbp]
+\centering
+\caption{Benjamini--Hochberg correction, bivariate family. $\dagger$ marks an $\varepsilon^2$ whose
+bias-corrected value was negative and is displayed truncated to 0.00. $\ddagger$: a tie-aware permutation
+check (10,000 label permutations, seed 20260715) gave $p=0.010$ for this test, the only one in this family
+reaching uncorrected significance; its ``no''-background group contributes only 3 non-missing values.}
+\begin{tabular}{lrrr}
+\toprule
+Test & raw $p$ & BH $q$ & $\varepsilon^2$ \\
+\midrule
+Preparation (3-level) $\rightarrow$ satisfaction (KW) & 0.120 & 0.300 & 0.04 \\
+Comfort/safety by prior knowledge of facilitator background (KW) & 0.326 & 0.407 & 0.00 \\
+Comfort/safety by screening received (KW) & 0.301 & 0.407 & 0.01 \\
+Trust in facilitator by prior knowledge of background (KW) & $0.017^{\ddagger}$ & 0.085 & 0.10 \\
+Trust in facilitator by screening received (KW) & 0.679 & 0.679 & $0.00^{\dagger}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Benjamini--Hochberg correction, substance-stratified family.}
+\begin{tabular}{lrrr}
+\toprule
+Test & raw $p$ & BH $q$ & effect size \\
+\midrule
+Satisfaction by substance group (KW) & 0.083 & 0.166 & $\varepsilon^2=0.05$ \\
+Non-consensual contact by substance group (permutation $\chi^2$) & 0.486 & 0.486 & $V=0.17$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Benjamini--Hochberg correction, safety-domain family. The non-consensual contact outcome is the
+lifetime item, while the three participant-side exposures crossed against it all ask about the most recent
+ceremony; 3 of the 5 respondents reporting the event ever placed it at an earlier ceremony, so for those
+three the exposure and the outcome describe different events. This referent mismatch applies to every row
+in the upper block and is the main reason these tests are hypothesis-generating only.}
+\begin{tabular}{p{8.2cm}rrl}
+\toprule
+Test & raw $p$ & BH $q$ & effect size \\
+\midrule
+Non-consensual contact $\times$ prior knowledge of facilitator background & 0.047 & 0.188 & $V=0.38$ \\
+Non-consensual contact $\times$ screening received & 0.094 & 0.188 & $V=0.32$ \\
+\addlinespace
+Witnessed crisis signs $\times$ distress-response protocol (facilitator branch) & 0.143 & 0.191 & OR undefined \\
+Witnessed crisis signs $\times$ emergency plan (facilitator branch) & 0.429 & 0.429 & OR undefined \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Benjamini--Hochberg correction, legal-knowledge family. Predictors are three participant-side
+legal items; outcomes are disclosure to a health professional, screening received, and non-consensual
+contact. All tests Kruskal--Wallis. $\dagger$ marks a truncated $\varepsilon^2$, as above.}
+\begin{tabular}{lrrr}
+\toprule
+Test & raw $p$ & BH $q$ & $\varepsilon^2$ \\
+\midrule
+General legal knowledge by disclosure to a health professional & 0.258 & 0.581 & 0.01 \\
+Most-recent-ceremony legal knowledge by disclosure & 0.164 & 0.495 & 0.03 \\
+Most-recent-ceremony legal worry by disclosure & 0.031 & 0.283 & 0.09 \\
+General legal knowledge by screening received & 0.412 & 0.741 & $0.00^{\dagger}$ \\
+Most-recent-ceremony legal knowledge by screening received & 0.659 & 0.741 & $0.00^{\dagger}$ \\
+Most-recent-ceremony legal worry by screening received & 0.914 & 0.914 & $0.00^{\dagger}$ \\
+General legal knowledge by non-consensual contact & 0.617 & 0.741 & $0.00^{\dagger}$ \\
+Most-recent-ceremony legal knowledge by non-consensual contact & 0.165 & 0.495 & 0.03 \\
+Most-recent-ceremony legal worry by non-consensual contact & 0.611 & 0.741 & $0.00^{\dagger}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+The only legal-domain comparison reaching uncorrected significance was most-recent-ceremony legal worry by
+disclosure to a health professional ($H=6.92$, $p=0.031$, $\varepsilon^2=0.09$): median 1.5 (IQR 0--2) among
+the 8 reporting disclosure against median 0 (IQR 0--0) among the 47 reporting none. It did not survive
+correction ($q=0.283$). Two further legal items were not testable: a general legal-worry item reached only
+six respondents because of a skip-logic error described in the main text's Limitations, and a facilitator
+legal-knowledge item sits on the unlinked facilitator branch with no participant-side counterpart.
+
+\section{Exploratory proportional-odds model}
+
+This model adjusts preparation for age and facilitator trust simultaneously. The full covariate set
+specified in the original protocol was not estimable: gender cells were too thin for a four-level
+categorical predictor, and screening overlapped substantively with the trust and background measures
+already in the model. A prespecified three-predictor fallback was used instead. The outcome was collapsed
+to three ordered levels for this model only, because the raw seven-level scale has cells as small as one to
+three respondents at the low end and risks quasi-complete separation at this sample size; every other table
+in the main text and this supplement retains the full 0--6 scale.
+
+\begin{table}[htbp]
+\centering
+\caption{Proportional-odds model for reported satisfaction. Complete-case $n=62$ of the 63 participants
+with a non-missing outcome. Collapsed outcome: low/mixed (0--3) $n=9$; mostly positive (4--5) $n=19$; very
+positive (6) $n=34$.}
+\begin{tabular}{lrrr}
+\toprule
+Predictor & OR & 95\% CI & $p$ \\
+\midrule
+Age (years) & 0.99 & 0.94--1.03 & 0.527 \\
+Any preparation vs.\ none & 5.21 & 0.84--32.41 & 0.077 \\
+Trust in facilitator (0--4) & 2.20 & 1.06--4.53 & 0.033 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+Omnibus likelihood-ratio test against an intercept-and-cutpoint-only model: $\chi^2(3)=8.68$, $p=0.034$;
+McFadden pseudo-$R^2=0.07$. \textbf{Power caveat.} Sixty-two complete cases support five estimated
+parameters (three slopes and two cutpoints), roughly 12 cases per parameter, below conventional rules of
+thumb for stable ordinal-regression estimates. The proportional-odds assumption was not formally tested,
+the sample being too small to test it reliably, and is simply assumed. Every estimate in this table is
+exploratory and hypothesis-generating, and should not be presented without this caveat.
+
+\section{Psychometric evidence for the instrument}
+
+The instrument was purpose-built, so this is its first reliability evidence. Two genuine same-respondent pairs are testable.
+
+\begin{table}[htbp]
+\centering
+\caption{Reliability of the two testable same-respondent item pairs.}
+\begin{tabular}{lrrr}
+\toprule
+Scale & Cronbach's $\alpha$ & 95\% CI & $n$ \\
+\midrule
+Trust in facilitator + in-ceremony comfort/safety (2 items) & 0.58 & 0.31--0.74 & 64 \\
+Legal knowledge, general + most-recent ceremony (2 items) & 0.86 & 0.75--0.92 & 55 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+With only two items, $\alpha$ is a monotonic transform of the pairwise correlation and the item-rest
+correlations are not independent numbers. The corresponding Spearman correlations are $\rho=0.39$
+($p=0.002$, $n=64$) for the trust-and-comfort pair and $\rho=0.79$ ($p<0.001$, $n=55$) for the
+legal-knowledge pair; the latter two items required harmonization onto a shared 0--4 code because the
+most-recent-ceremony version omits the bottom category its general counterpart carries.
+
+A third candidate pair was untestable: a perceived-life-impact item had zero variance, with all 67
+respondents answering selecting the same option, so it cannot correlate with anything and $\alpha$ is
+undefined. This is reported as a data-quality finding, not a scale result.
+
+\end{document}

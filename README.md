@@ -25,12 +25,16 @@ The design is unweighted and non-probability. No causal or population-level clai
 data/           Survey instrument (KoboToolbox XLSForm) and raw results
 analysis/       Python analysis pipeline (data prep, quality flags, statistics, report)
 outputs/        Generated statistical report, figures, and tables
-manuscript/     LaTeX manuscript drafts, references, and journal-requirements notes
-figures/        Additional figure assets
+manuscript/
+  drafts/       v7_draft.tex — approved manuscript source (+ .bbl, .pdf)
+  final/        Submission package (compiled manuscript, title page, cover letter, TIFF figures,
+                STROBE checklist, source zip); see final/SUBMISSION_CHECKLIST.md
+  figures/      Main-text figures (fig1–fig4) and make_figures.py
+  references/   references.bib
+  sources/      Literature-search and verification audit trail
+archive/        Superseded drafts, internal review rounds, and stale outputs (see archive/README.md)
 ANALYSIS_PLAN.md      Full analysis rationale and locked methodological decisions
-MANUSCRIPT_PLAN.md    Manuscript drafting plan and phase tracking
 CLAUDE.md              Project operating notes (skip logic, variable definitions, decisions)
-ceremonial_entheogen_pr_manuscript.md   Manuscript draft (Markdown)
 ```
 
 ## Reproducing the analysis
@@ -50,4 +54,4 @@ Respondents are anonymous; no identifying information was collected beyond a sel
 
 ## Status
 
-Analysis and manuscript drafting are in progress; see [`MANUSCRIPT_PLAN.md`](MANUSCRIPT_PLAN.md) for phase status and [`manuscript/JOURNAL_REQUIREMENTS.md`](manuscript/JOURNAL_REQUIREMENTS.md) for target-journal (*Journal of Psychoactive Drugs*) formatting constraints.
+Submission package assembled for the *Journal of Psychoactive Drugs*; see [`manuscript/final/SUBMISSION_CHECKLIST.md`](manuscript/final/SUBMISSION_CHECKLIST.md) for the file manifest and outstanding items, and [`manuscript/JOURNAL_REQUIREMENTS_VERIFIED.md`](manuscript/JOURNAL_REQUIREMENTS_VERIFIED.md) for journal formatting constraints.

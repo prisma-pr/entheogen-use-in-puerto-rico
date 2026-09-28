@@ -41,7 +41,7 @@ from data_prep import load, choices_map            # noqa: E402
 
 DPI = 600
 
-# ── Shared style (matches analysis/report.py and figures/example.py) ──────────
+# ── Shared style (matches analysis/report.py and archive/figures/example.py) ──────────
 plt.rcParams.update({
     "font.family": "sans-serif",
     "font.sans-serif": ["Arial", "DejaVu Sans", "Liberation Sans"],
@@ -63,7 +63,7 @@ PALETTE = {
     "red_strong": "#B64342",
     "neutral_light": "#CFCECE",
     "neutral_dark": "#4D4D4D",
-    "band": "#EDF1FA",      # light blue band, as in figures/example.py
+    "band": "#EDF1FA",      # light blue band, as in archive/figures/example.py
     "navy_text": "#162040",
     "excl_fill": "#F2F2F2",
     "excl_edge": "#9A9A9A",

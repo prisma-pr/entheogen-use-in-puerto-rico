@@ -345,3 +345,54 @@ Open: the 4,000-word cap is read as excluding table content ("Introduction–Met
 combined", verbatim from the JPD guidelines). If that reading is wrong the plan breaks and Tables 1–2
 go back out first. Also still open after three flags — the cell-suppression justification v5 removed,
 against analysis-plan decision E10 and captions that all say "counts are exact".
+
+## v6 → v7_draft.tex (2026-09-08, human .docx revision)
+
+Input was `v7_draft.docx.md`, a Word-exported markdown draft of Jean's manual revision, diffed against
+`v6_draft.md` (the plain-markdown rendering of `v6_draft.tex`) to separate real content edits from the
+`.docx` export's own formatting conventions (bold headers, numbered section labels, curly quotes, `*n*`
+italics, comma-before-year citation punctuation) — none of the latter were carried into the `.tex`, since
+LaTeX's own machinery (`\section`, `\citep`, `natbib`) already produces the equivalent output. Several
+wording changes the diff surfaced (removal of "four-arm" before "preparation × integration", "common but
+not uniform as 81%" phrasing, the "the psilocybin-specific Puerto Rico survey" edit, and the table's
+"Overnight ($\sim$12+ hours)") turned out to already be present in `v6_draft.tex`, meaning the `.tex` had
+drifted ahead of `v6_draft.md` at some point; no change was needed there.
+
+**Author list and affiliations.** Paulina Rullán Farinacci → Paulina D. Rullán Farinacci (middle initial
+added). A new affiliation, Sattva Clinic, was inserted as #6, pushing the Department of Psychology (UPR
+Río Piedras) from #6 to #7 and Centro de Investigaciones Sociales from #7 to #8; Adriana I. Rodríguez
+Massa's superscript updated 6→7 to track the renumbered Psychology affiliation, and Yamil O. Ortiz Ortiz's
+superscripts updated 6,7→6,8 (he keeps affiliation 6, now Sattva Clinic, plus the renumbered CIS
+affiliation 8). Affiliation #3 renamed from "Colectivo Psicodélico de Puerto Rico, Colectivo Psicodélico
+Inc., and Within Psychological Services" to "Red Enteogénica de Puerto Rico, Colectivo Psicodélico de
+Puerto Rico and Within Psychological Services".
+
+**Text edits applied.**
+- Introduction: "psilocybin, DMT" → "psilocybin, N,N-dimethyltryptamine (DMT)" (acronym expanded on first
+  use); "To the author's knowledge" → "To the authors' knowledge" (both instances, Introduction and
+  Instrument).
+- Results (ceremonial context): "DMT, LSD, MDMA, and ketamine" → "DMT, lysergic acid diethylamide (LSD),
+  3,4-methylenedioxymethamphetamine (MDMA), and ketamine" (acronyms expanded on first use).
+- Limitations: dropped the trailing clause "— the item on which retained non-response concentrated" after
+  the "not sure"/"prefer not to answer" screening-item sentence.
+- Competing interests: expanded the named-organization list from "the Puerto Rico Institute for Psychedelic
+  Science, Medicine & Awareness and the Colectivo Psicodélico de Puerto Rico" to add Sattva Clinic, Pravan
+  Foundation, and Within Psychological Services, consistent with the updated affiliation list.
+
+**Not applied / flagged.** None — every substantive edit identified in the `.docx.md` diff mapped cleanly
+onto an existing `.tex` passage or bibkey; no ambiguous rewording or unresolvable new citation was found.
+The reference-list and in-text citation punctuation differences in the `.docx.md` export (numbered vs.
+author-year, comma-before-year, DOI omission, added "Online First" notes) are pandoc/Word-export rendering
+artifacts of a different `natbib` style setting on the human's end, not edits to the underlying `.bib`
+data, and were left untouched.
+
+Build not run this round per task instructions (no `pdflatex`/`bibtex`, no figure regeneration).
+
+**Post-v7 correction (2026-09-08, same day).** The competing-interests paragraph inherited from v6
+labeled all listed organizations, including Sattva Clinic and Within Psychological Services, as
+"non-financial" and stated no author held a financial interest in any commercial entity. Confirmed with
+the corresponding author that this was inaccurate for two co-authors: Juliana Millán-Torres owns Within
+Psychological Services, and Paulina D. Rullán Farinacci is Chief Medical Officer of Sattva Clinic — both
+are financial interests, not non-financial ones. Rewrote the paragraph to split PRIPSMA/Pravan
+Foundation/Colectivo Psicodélico (non-financial) from the two named ownership/executive relationships
+(financial), and narrowed the closing disclaimer to "No other author..." accordingly.
